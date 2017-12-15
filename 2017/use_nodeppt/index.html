@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source"/>
+
+
+
+
+
+
+        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            在线PPT演示工具---nodePPT 简介 | 
+        
+        Travon&#39;s Blog
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#616161">
+    <meta name="author" content="Travon">
+    <meta name="description" itemprop="description" content="简介
+这可能是迄今为止最好的网页版演示库
+
+正如作者所说，nodePPT是基于node.js开发的，用Markdown语法来编写的在线PPT工具，参见Github nodePPT。下面是官方demo，当然也是用nodePPT实现。">
+    <meta name="keywords" content="Travon, 欧阳恩,nodePPT,node">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Travon&#39;s Blog">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI" />
+    <meta name="baidu-site-verification" content="b065ac8e324446cb89f79f7458774207" />
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #616161 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #616161 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #616161 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(http://otp4h8pnz.bkt.clouddn.com/bg.png-bg_80);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Material Icons'),
+            local('MaterialIcons-Regular'),
+            url(https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+            url(https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/fonts/MaterialIcons-Regular.woff) format('woff'),
+            url(https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/fonts/MaterialIcons-Regular.ttf) format('truetype');
+        }
+    </style>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://oyeblog.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="在线PPT演示工具---nodePPT 简介 | Travon&#39;s Blog">
+    <meta property="og:image" content="http://oyeblog.com/img/favicon.png" />
+    <meta property="og:description" content="简介
+这可能是迄今为止最好的网页版演示库
+
+正如作者所说，nodePPT是基于node.js开发的，用Markdown语法来编写的在线PPT工具，参见Github nodePPT。下面是官方demo，当然也是用nodePPT实现。">
+    <meta property="og:article:tag" content="nodePPT"> <meta property="og:article:tag" content="node"> 
+
+    
+        <meta property="article:published_time" content="Fri Dec 15 2017 19:39:02 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Sep 14 2017 13:46:02 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="在线PPT演示工具---nodePPT 简介 | Travon&#39;s Blog">
+    <meta name="twitter:description" content="简介
+这可能是迄今为止最好的网页版演示库
+
+正如作者所说，nodePPT是基于node.js开发的，用Markdown语法来编写的在线PPT工具，参见Github nodePPT。下面是官方demo，当然也是用nodePPT实现。">
+    <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://oyeblog.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://oyeblog.com/2017/use_nodeppt/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://oyeblog.com/2017/use_nodeppt/index.html",
+    "headline": "在线PPT演示工具---nodePPT 简介",
+    "datePublished": "Fri Dec 15 2017 19:39:02 GMT+0800",
+    "dateModified": "Thu Sep 14 2017 13:46:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Travon",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hello World!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Travon&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",nodePPT,nodeTravon, 欧阳恩",
+    "description": "简介
+这可能是迄今为止最好的网页版演示库
+
+正如作者所说，nodePPT是基于node.js开发的，用Markdown语法来编写的在线PPT工具，参见Github nodePPT。下面是官方demo，当然也是用nodePPT实现。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+        
+            <script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https'){bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else{bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp, s);})();</script>
+        
+    
+
+<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建"><span class="post-toc-number">2.2.</span> <span class="post-toc-text"><a href="#&#x521B;&#x5EFA;" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动"><span class="post-toc-number">2.3.</span> <span class="post-toc-text"><a href="#&#x542F;&#x52A8;" class="headerlink" title="&#x542F;&#x52A8;"></a>&#x542F;&#x52A8;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启用socket控制"><span class="post-toc-number">2.4.</span> <span class="post-toc-text"><a href="#&#x542F;&#x7528;socket&#x63A7;&#x5236;" class="headerlink" title="&#x542F;&#x7528;socket&#x63A7;&#x5236;"></a>&#x542F;&#x7528;socket&#x63A7;&#x5236;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法1-使用url参数"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text"><a href="#&#x65B9;&#x6CD5;1-&#x4F7F;&#x7528;url&#x53C2;&#x6570;" class="headerlink" title="&#x65B9;&#x6CD5;1 &#x4F7F;&#x7528;url&#x53C2;&#x6570;"></a>&#x65B9;&#x6CD5;1 &#x4F7F;&#x7528;url&#x53C2;&#x6570;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法2-使用start命令行"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text"><a href="#&#x65B9;&#x6CD5;2-&#x4F7F;&#x7528;start&#x547D;&#x4EE4;&#x884C;" class="headerlink" title="&#x65B9;&#x6CD5;2 &#x4F7F;&#x7528;start&#x547D;&#x4EE4;&#x884C;"></a>&#x65B9;&#x6CD5;2 &#x4F7F;&#x7528;start&#x547D;&#x4EE4;&#x884C;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打印-amp-导出PPT"><span class="post-toc-number">2.5.</span> <span class="post-toc-text"><a href="#&#x6253;&#x5370;-amp-&#x5BFC;&#x51FA;PPT" class="headerlink" title="&#x6253;&#x5370;&amp;&#x5BFC;&#x51FA;PPT"></a>&#x6253;&#x5370;&amp;&#x5BFC;&#x51FA;PPT</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#语法"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本配置"><span class="post-toc-number">3.1.</span> <span class="post-toc-text"><a href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;" class="headerlink" title="&#x57FA;&#x672C;&#x914D;&#x7F6E;"></a>&#x57FA;&#x672C;&#x914D;&#x7F6E;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单页配置语法"><span class="post-toc-number">3.2.</span> <span class="post-toc-text"><a href="#&#x5355;&#x9875;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;" class="headerlink" title="&#x5355;&#x9875;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;"></a>&#x5355;&#x9875;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#背景"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text"><a href="#&#x80CC;&#x666F;" class="headerlink" title="&#x80CC;&#x666F;"></a>&#x80CC;&#x666F;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单页动画"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text"><a href="#&#x5355;&#x9875;&#x52A8;&#x753B;" class="headerlink" title="&#x5355;&#x9875;&#x52A8;&#x753B;"></a>&#x5355;&#x9875;&#x52A8;&#x753B;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转场回调"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text"><a href="#&#x8F6C;&#x573A;&#x56DE;&#x8C03;" class="headerlink" title="&#x8F6C;&#x573A;&#x56DE;&#x8C03;"></a>&#x8F6C;&#x573A;&#x56DE;&#x8C03;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面内配置语法"><span class="post-toc-number">3.3.</span> <span class="post-toc-text"><a href="#&#x9875;&#x9762;&#x5185;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;" class="headerlink" title="&#x9875;&#x9762;&#x5185;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;"></a>&#x9875;&#x9762;&#x5185;&#x914D;&#x7F6E;&#x8BED;&#x6CD5;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单条动画"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text"><a href="#&#x5355;&#x6761;&#x52A8;&#x753B;" class="headerlink" title="&#x5355;&#x6761;&#x52A8;&#x753B;"></a>&#x5355;&#x6761;&#x52A8;&#x753B;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#页面内上下布局"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text"><a href="#&#x9875;&#x9762;&#x5185;&#x4E0A;&#x4E0B;&#x5E03;&#x5C40;" class="headerlink" title="&#x9875;&#x9762;&#x5185;&#x4E0A;&#x4E0B;&#x5E03;&#x5C40;"></a>&#x9875;&#x9762;&#x5185;&#x4E0A;&#x4E0B;&#x5E03;&#x5C40;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#页面内表格"><span class="post-toc-number">3.3.3.</span> <span class="post-toc-text"><a href="#&#x9875;&#x9762;&#x5185;&#x8868;&#x683C;" class="headerlink" title="&#x9875;&#x9762;&#x5185;&#x8868;&#x683C;"></a>&#x9875;&#x9762;&#x5185;&#x8868;&#x683C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转场效果"><span class="post-toc-number">3.3.4.</span> <span class="post-toc-text"><a href="#&#x8F6C;&#x573A;&#x6548;&#x679C;" class="headerlink" title="&#x8F6C;&#x573A;&#x6548;&#x679C;"></a>&#x8F6C;&#x573A;&#x6548;&#x679C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他属性"><span class="post-toc-number">3.3.5.</span> <span class="post-toc-text"><a href="#&#x5176;&#x4ED6;&#x5C5E;&#x6027;" class="headerlink" title="&#x5176;&#x4ED6;&#x5C5E;&#x6027;"></a>&#x5176;&#x4ED6;&#x5C5E;&#x6027;</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#特色功能"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x7279;&#x8272;&#x529F;&#x80FD;" class="headerlink" title="&#x7279;&#x8272;&#x529F;&#x80FD;"></a>&#x7279;&#x8272;&#x529F;&#x80FD;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#iframe-效果"><span class="post-toc-number">4.1.</span> <span class="post-toc-text"><a href="#iframe-&#x6548;&#x679C;" class="headerlink" title="iframe &#x6548;&#x679C;"></a>iframe &#x6548;&#x679C;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速翻页"><span class="post-toc-number">4.2.</span> <span class="post-toc-text"><a href="#&#x5FEB;&#x901F;&#x7FFB;&#x9875;" class="headerlink" title="&#x5FEB;&#x901F;&#x7FFB;&#x9875;"></a>&#x5FEB;&#x901F;&#x7FFB;&#x9875;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动效样式强调"><span class="post-toc-number">4.3.</span> <span class="post-toc-text"><a href="#&#x52A8;&#x6548;&#x6837;&#x5F0F;&#x5F3A;&#x8C03;" class="headerlink" title="&#x52A8;&#x6548;&#x6837;&#x5F0F;&#x5F3A;&#x8C03;"></a>&#x52A8;&#x6548;&#x6837;&#x5F0F;&#x5F3A;&#x8C03;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持zoom-js"><span class="post-toc-number">4.4.</span> <span class="post-toc-text"><a href="#&#x652F;&#x6301;zoom-js" class="headerlink" title="&#x652F;&#x6301;zoom.js"></a>&#x652F;&#x6301;zoom.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用note笔记"><span class="post-toc-number">4.5.</span> <span class="post-toc-text"><a href="#&#x4F7F;&#x7528;note&#x7B14;&#x8BB0;" class="headerlink" title="&#x4F7F;&#x7528;note&#x7B14;&#x8BB0;"></a>&#x4F7F;&#x7528;note&#x7B14;&#x8BB0;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用画笔"><span class="post-toc-number">4.6.</span> <span class="post-toc-text"><a href="#&#x4F7F;&#x7528;&#x753B;&#x7B14;" class="headerlink" title="&#x4F7F;&#x7528;&#x753B;&#x7B14;"></a>&#x4F7F;&#x7528;&#x753B;&#x7B14;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PPT宽度变化"><span class="post-toc-number">4.7.</span> <span class="post-toc-text"><a href="#PPT&#x5BBD;&#x5EA6;&#x53D8;&#x5316;" class="headerlink" title="PPT&#x5BBD;&#x5EA6;&#x53D8;&#x5316;"></a>PPT&#x5BBD;&#x5EA6;&#x53D8;&#x5316;</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://otp4h8pnz.bkt.clouddn.com/nodeppt_header.jpg-bg_70)">
+    
+            <p class="article-headline-p">
+                在线PPT演示工具---nodePPT 简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Travon</strong>
+        <span>12月 15, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZ0lEQVR42u3awXKcMBAE0P3/n06uOcSkWwNj4nqcKLNe9NgqzdDS59ePPj54eHh4eHh4eHgv433iI/+vrz7551/+MqzyLl/eEQ8PD2+F94+pdnzja1IOjsaGh4eHt8hLBpdQ772ajw0PDw/v/bx8WNcTen5fPDw8vP+Xlw86ac3zq3h4eHhv4yUv/NfUPJJoz5eyFjw8PLyYdxbI7pyvru/h4eHhBbx6S1M8Wd/7ycNNV3h4eHgP8PKJOBncdTmZx7vJ48DDw8N7mteWhDY4SMLcNvZ9pKXGw8PDG/DOlvDb70lKS1Iw6sKAh4eHdxMvmnDH8e7ZElf9WPHw8PBWeDl4Ernm1LNShIeHh7fJS5rdfJrOI+BJbFGEEXh4eHgP8PIg4CzSnWzozwMLPDw8vH3eWZM9iW7zq6tbB/Dw8PAGb+tJwbh3om9hozcGPDw8vCPepDnO2+42njh7EHh4eHibvHnr3JKS5a62UOHh4eHt8JIJOikY7eaDeUiBh4eH9128yeaApDVvB5qHEXh4eHjfy8tDhzzCOGuU2+C4zlrw8PDwbuK1RSLHt4+vHU9R9/Dw8PAe4E0m5fYR5O1yvUSHh4eHt8ibnJ9N8XngW/wMeHh4eA/z2iPfdHVdeJKr7c+Ah4eHt8ObTMpJWzyJetuQFw8PD2+TlxeDyTas/LGOGnQ8PDy8RV4bqibbp+qF/8H34+Hh4b2Zl8cH+USftObRxlk8PDy8F/MmW13zDQRt446Hh4e3yWsXvdrlrqQMTAILPDw8vE1eGwHcO7m3EUYdRuDh4eHdyvt5Bx4eHh4eHh4e3guO328UU++Qq83HAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/node/">node</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/nodePPT/">nodePPT</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=在线PPT演示工具---nodePPT 简介&url=http://oyeblog.com/2017/use_nodeppt/index.html&pic=http://oyeblog.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=在线PPT演示工具---nodePPT 简介&url=http://oyeblog.com/2017/use_nodeppt/index.html&via=Travon" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://oyeblog.com/2017/use_nodeppt/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://oyeblog.com/2017/use_nodeppt/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
+<p>这可能是迄今为止最好的网页版演示库</p>
+</blockquote>
+<p>正如作者所说，nodePPT是基于node.js开发的，用Markdown语法来编写的在线PPT工具，参见<a href="https://github.com/ksky521/nodeppt" target="_blank" rel="noopener">Github nodePPT</a>。下面是官方demo，当然也是用nodePPT实现。<br><a id="more"></a></p>
+<iframe src="http://js8.in/nodeppt/" height="600px" align="center"></iframe>
+
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm install -g nodeppt</code><br>如果出现被qiang的情况可以用下面这个命令：<br><code>npm install -g nodeppt --registry=http://r.cnpmjs.org</code>  </p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>支持markdown语法快速创建网页幻灯片。<br><code>nodeppt create ppt-name</code>  </p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 获取帮助</span>
+nodeppt start <span class="token operator">-</span>h
+<span class="token comment" spellcheck="true"># 绑定端口</span>
+nodeppt start <span class="token operator">-</span>p <span class="token operator">&lt;</span>port<span class="token operator">></span>
+nodeppt start <span class="token operator">-</span>p <span class="token number">8090</span> <span class="token operator">-</span>d path<span class="token operator">/</span><span class="token keyword">for</span><span class="token operator">/</span>ppts
+<span class="token comment" spellcheck="true"># 绑定host，默认绑定0.0.0.0</span>
+nodeppt start <span class="token operator">-</span>p <span class="token number">8080</span> <span class="token operator">-</span>d path<span class="token operator">/</span><span class="token keyword">for</span><span class="token operator">/</span>ppts <span class="token operator">-</span>H <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="启用socket控制"><a href="#启用socket控制" class="headerlink" title="启用socket控制"></a>启用socket控制</h2><p>使用socket通信（按Q键显示/关闭二维码，手机扫描，即可控制）<br>socket须知：1、注意手机和pc要可以相互访问，2、防火墙，3、ip</p>
+<h3 id="方法1-使用url参数"><a href="#方法1-使用url参数" class="headerlink" title="方法1 使用url参数"></a>方法1 使用url参数</h3><p><code>http://127.0.0.1:8080/md/demo.md?controller=socket</code><br>在页面按键【Q】显示控制url的二维码和控制链接（需要隐身窗口打开），手机上可以使用左右touch滑动和摇一摇切换下一页</p>
+<h3 id="方法2-使用start命令行"><a href="#方法2-使用start命令行" class="headerlink" title="方法2 使用start命令行"></a>方法2 使用start命令行</h3><p><code>nodeppt start -c socket</code><br>在页面按键【Q】显示控制url的二维码和控制链接（需要隐身窗口打开），手机上可以使用左右touch滑动和摇一摇切换下一页</p>
+<h2 id="打印-amp-导出PPT"><a href="#打印-amp-导出PPT" class="headerlink" title="打印&amp;导出PPT"></a>打印&amp;导出PPT</h2><p>使用<code>url?print=1</code>访问页面，然后选择chrome的系统打印即可。  </p>
+<pre class="line-numbers language-shell"><code class="language-shell"># 获取generate帮助
+nodeppt generate -h
+# 使用generate命令
+nodeppt generate filepath
+# 导出全部，包括nodeppt的js、img和css文件夹
+# 默认导出在publish文件夹
+nodeppt generate ./ppts/demo.md -a
+# 指定导出文件夹
+nodeppt generate ./ppts/demo.md output/path -a
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里可以生成<code>.html</code>文件，但是必须是<code>-a</code>模式，不然单独打开时没有PPT的效果。</p>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>总体来说，nodePPT用的是Markdown，在此基础上做了一些扩展。</p>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 演讲题目
+<span class="token key atrule">speaker</span><span class="token punctuation">:</span> 演讲者
+<span class="token key atrule">url</span><span class="token punctuation">:</span> 可以设置链接
+<span class="token key atrule">transition</span><span class="token punctuation">:</span> 转场效果，例如：zoomin/cards/slide，其他的可以参见github页面
+<span class="token key atrule">files</span><span class="token punctuation">:</span> 引入的js和css文件，多个以半角逗号隔开
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> 皮肤样式
+<span class="token key atrule">highlightStyle</span><span class="token punctuation">:</span> 代码高亮样式，默认monokai_sublime
+<span class="token key atrule">usemathjax</span><span class="token punctuation">:</span> yes 启用MathJax渲染公式
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="单页配置语法"><a href="#单页配置语法" class="headerlink" title="单页配置语法"></a>单页配置语法</h2><p>通过<code>[slide]</code>作为PPT分隔</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><pre><code>[slide style=&quot;background-image:url(&#39;/img/bg1.png&#39;)&quot;]
+</code></pre><h3 id="单页动画"><a href="#单页动画" class="headerlink" title="单页动画"></a>单页动画</h3><p>主要有以下模式：kontext，vkontext，circle，earthquake，cards，glue，stick，move，newspaper，slide，slide2，slide3，horizontal3d，horizontal，vertical3d，zoomin，zoomout，pulse等</p>
+<pre><code>[slide data-transition=&quot;vertical3d&quot;]
+</code></pre><h3 id="转场回调"><a href="#转场回调" class="headerlink" title="转场回调"></a>转场回调</h3><pre class="line-numbers language-html"><code class="language-html">[slide data-on-leave="outcallback" data-on-enter="incallback"]
+## 当进入此页，就执行incallback函数
+## 当离开此页面，就执行outcallback函数
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="页面内配置语法"><a href="#页面内配置语法" class="headerlink" title="页面内配置语法"></a>页面内配置语法</h2><h3 id="单条动画"><a href="#单条动画" class="headerlink" title="单条动画"></a>单条动画</h3><p>使用方法：列表第一条加上<code>{:&amp;.动画类型}</code>（注意空格），下面是示例代码，其他动画类型包括moveIn，fadeIn，bounceIn，rollIn，zoomIn：  </p>
+<pre class="line-numbers language-html"><code class="language-html">* 上下左右方向键翻页
+    * 列表支持渐显动画 {:&amp;.moveIn}
+    * 支持多级列表
+    * 这个动画是moveIn
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="页面内上下布局"><a href="#页面内上下布局" class="headerlink" title="页面内上下布局"></a>页面内上下布局</h3><pre class="line-numbers language-html"><code class="language-html">[slide]
+## 主页面样式
+### ----是上下分界线
+----
+nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT
+nodeppt：https://github.com/ksky521/nodeppt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="页面内表格"><a href="#页面内表格" class="headerlink" title="页面内表格"></a>页面内表格</h3><pre class="line-numbers language-html"><code class="language-html">### 市面上主要的css预处理器：less\sass\stylus
+---
+ |less| sass | stylus
+:-------|:------:|-------:|--------
+环境 |js/nodejs | Ruby | nodejs
+扩展名 | .less | .sass/.scss | .styl
+特点 | 老牌，用户多，支持js解析 | 功能全，有成型框架，发展快 | 语法多样，小众
+案例/框架 | [Bootstrap](http://getbootstrap.com/) | [compass](http://compass-style.org) [bourbon](http://bourbon.io) |
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="转场效果"><a href="#转场效果" class="headerlink" title="转场效果"></a>转场效果</h3><p><code>magic</code>标签，转场效果有zoomin/zoomout,move,circle,earthquake,newspaper,cover-diamond,horizontal3d/horizontal,vertical3d,cover-circle等  </p>
+<pre><code>[slide]
+[magic data-transition=&quot;效果&quot;]
+form code
+===== #4个以上的=作为转换前后页面的分隔符
+new code
+[/magic]
+</code></pre><h3 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h3><ul>
+<li>字体分类 <code>&lt;span class=&quot;text-分类&quot;&gt;text&lt;/span&gt;</code></li>
+<li>字体颜色 <code>&lt;span class=&quot;颜色&quot;&gt;text&lt;/span&gt;</code></li>
+<li>label分类 <code>&lt;span class=&quot;label label-分类&quot;&gt;text&lt;/span&gt;</code></li>
+<li>href <code>&lt;a href=&quot;&quot;&gt;text&lt;/a&gt;</code></li>
+<li>mark <code>&lt;mark&gt;text&lt;/mark&gt;</code></li>
+<li>左、右对齐 <code>{:&amp;.pull-right}</code> 和 <code>{:&amp;.pull-right}</code></li>
+<li>引用块 <code>&gt; nodeppt可能是迄今为止最好用的web presentation &lt;small&gt;三水清&lt;/small&gt; {:&amp;.pull-right}</code></li>
+<li>代码高亮 <code>&lt;code class=&quot;javascript&quot;&gt;code&lt;/code&gt;</code> <strong>这里必须在配置中设置<code>highlightStyle</code>为特定风格，比如<code>monokai_sublime</code> </strong></li>
+</ul>
+<h1 id="特色功能"><a href="#特色功能" class="headerlink" title="特色功能"></a>特色功能</h1><h2 id="iframe-效果"><a href="#iframe-效果" class="headerlink" title="iframe 效果"></a>iframe 效果</h2><ul>
+<li>可以嵌入网页等，在做demo的时候会相当有用 <code>&lt;iframe data-src=&quot;http://www.baidu.com&quot; src=&quot;about:blank;&quot;&gt;&lt;/iframe&gt;</code></li>
+</ul>
+<h2 id="快速翻页"><a href="#快速翻页" class="headerlink" title="快速翻页"></a>快速翻页</h2><ul>
+<li>输入页码，然后enter</li>
+<li>使用O键，开启纵览模式，然后翻页</li>
+</ul>
+<h2 id="动效样式强调"><a href="#动效样式强调" class="headerlink" title="动效样式强调"></a>动效样式强调</h2><ul>
+<li>官方文档说<strong>粗体</strong>和<em>斜体</em>，都可以有动效，但是我的实践中只有斜体有效，之后可能还要再研究一下</li>
+<li>按下【H】键查看效果</li>
+</ul>
+<h2 id="支持zoom-js"><a href="#支持zoom-js" class="headerlink" title="支持zoom.js"></a>支持zoom.js</h2><ul>
+<li>增加了zoom.js的支持，在演示过程中使用<code>alt+click</code>，则点击的地方就开始放大，再次<code>alt+click</code>则回复原状</li>
+</ul>
+<h2 id="使用note笔记"><a href="#使用note笔记" class="headerlink" title="使用note笔记"></a>使用note笔记</h2><ul>
+<li>代码 <code>[note]这是note[/note]</code></li>
+<li>按下键盘【N】键显示note</li>
+<li>如果使用多窗口控制，note会在控制窗口中出现，这个功能点个赞！</li>
+</ul>
+<h2 id="使用画笔"><a href="#使用画笔" class="headerlink" title="使用画笔"></a>使用画笔</h2><ul>
+<li>按下键盘【P】键：按下鼠标左键，在此处乱花下看看效果。</li>
+<li>按下键盘【B/Y/R/G/M】：更换颜色</li>
+<li>按下【1~4】：更换粗细</li>
+<li>按下键盘【C】键：清空画板</li>
+</ul>
+<h2 id="PPT宽度变化"><a href="#PPT宽度变化" class="headerlink" title="PPT宽度变化"></a>PPT宽度变化</h2><ul>
+<li>按下键盘【W】键，切换到更宽的页面看效果，第二次按键返回</li>
+</ul>
+
+        
+          <div class="article-statement">
+            <hr>  
+            <strong>本文标题: </strong><a href="/2017/use_nodeppt/">在线PPT演示工具---nodePPT 简介</a><br>
+            <strong>原始链接: </strong><a href="/2017/use_nodeppt/" title="在线PPT演示工具---nodePPT 简介">http://oyeblog.com/2017/use_nodeppt/</a><br>
+            <strong>发布时间: </strong>2017年12月15日 - 19时39分<br>
+            
+            <strong>最后更新: </strong>2017年09月14日 - 13时46分<br>
+            
+            <strong>版权声明: </strong>本站文章均采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_black">CC BY-NC-SA 4.0协议</a>进行许可。转载请注明出处！<br>
+          </div>
+        
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 gitcoment -->
+<div id="gitment-comment">
+    <!-- Gitment 评论框 -->
+<div id="container"></div>
+</div>
+<style>
+    #gitment-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        //id: '页面 ID', // 可选。默认为 location.href
+        owner: 'OYE93',
+        repo: 'oyeblog_comments',
+        oauth: {
+            client_id: '900dede2d51c6ea1c0c2',
+            client_secret: 'd8d7c4458ff56be873b3c9b5f45649523e3e3adc',
+        },
+    })
+    gitment.render('container')
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/tricks_in_markdown/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(http://otp4h8pnz.bkt.clouddn.com/sidebar_header.png-bg_50);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Travon's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        en.ouyang.travon@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: en.ouyang.travon@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">contact_mail</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="映像">
+                
+                    <i class="material-icons sidebar-material-icons">collections</i>
+                
+                映像
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">face</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">16</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+    <span id="footer-image">
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="cc_logo">
+            <img src="/img/by-nc-nd.png" alt="cc_logo"><!--
+     --></a>
+    </span>
+
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/oye93" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/OYE93" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Travon's Blog
+            <br/>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- Gitment -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
