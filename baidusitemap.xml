@@ -48,12 +48,12 @@
 
     
   <url>
-    <loc>http://oyeblog.com/2017/python_code_rules_1/</loc>
-    <lastmod>2017-12-18T08:24:03.247Z</lastmod>
+    <loc>http://oyeblog.com/2017/python_code_rules_2/</loc>
+    <lastmod>2017-12-18T08:24:36.428Z</lastmod>
     <data>
         <display>
-        <title>不被注意的Python代码规范(1)---风格规范</title>
-        <pubTime>2017-11-14T11:11:00.000Z</pubTime>
+        <title>不被注意的Python代码规范(2)---语言规范</title>
+        <pubTime>2017-11-16T11:30:00.000Z</pubTime>
         
         <tag>Python</tag>
          
@@ -72,27 +72,23 @@
 
     
   <url>
-    <loc>http://oyeblog.com/2017/paper_1_RL/</loc>
-    <lastmod>2017-12-18T08:23:37.598Z</lastmod>
+    <loc>http://oyeblog.com/2017/python_code_rules_1/</loc>
+    <lastmod>2017-12-18T08:24:03.247Z</lastmod>
     <data>
         <display>
-        <title>Reinforcement Learning for Relation Classification from Noisy Data</title>
-        <pubTime>2017-12-12T11:11:00.000Z</pubTime>
+        <title>不被注意的Python代码规范(1)---风格规范</title>
+        <pubTime>2017-11-14T11:11:00.000Z</pubTime>
         
-        <tag>NLP</tag>
+        <tag>Python</tag>
          
-        <tag>Deep Learning</tag>
+        <tag>Code</tag>
          
-        <tag>Paper</tag>
-         
-        <tag>Relation Classification</tag>
-         
-        <tag>Reinforcement Learning</tag>
+        <tag>Standard</tag>
          
          
            
              
-              <breadCrumb title="文献库" url="http://oyeblog.com/categories/%E6%96%87%E7%8C%AE%E5%BA%93/"/>
+              <breadCrumb title="技术向" url="http://oyeblog.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
           
         </display>
     </data>
