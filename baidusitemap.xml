@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://oyeblog.com/2018/install_tensorflow_gpu/</loc>
+    <lastmod>2018-01-16T15:03:41.616Z</lastmod>
+    <data>
+        <display>
+        <title>win10 + python3.6 + tensorflow-gpu1.4.0 + CUDA8.0 + cuDNN v6环境安装</title>
+        <pubTime>2018-01-16T14:44:00.000Z</pubTime>
+        
+        <tag>Tensorflow</tag>
+         
+        <tag>Install</tag>
+         
+         
+           
+             
+              <breadCrumb title="分享境" url="http://oyeblog.com/categories/%E5%88%86%E4%BA%AB%E5%A2%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://oyeblog.com/2018/2017_summary/</loc>
     <lastmod>2018-01-08T06:00:08.274Z</lastmod>
     <data>

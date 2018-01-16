@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oyeblog.com/"/>
-  <updated>2018-01-08T06:00:08.274Z</updated>
+  <updated>2018-01-16T15:03:41.616Z</updated>
   <id>http://oyeblog.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10 + python3.6 + tensorflow-gpu1.4.0 + CUDA8.0 + cuDNN v6环境安装</title>
+    <link href="http://oyeblog.com/2018/install_tensorflow_gpu/"/>
+    <id>http://oyeblog.com/2018/install_tensorflow_gpu/</id>
+    <published>2018-01-16T14:44:00.000Z</published>
+    <updated>2018-01-16T15:03:41.616Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>之前换了新电脑，一直没来得及把TensorFlow装上，电脑是惠普 战66，有独显MX150，所以这次安装的是gpu版，网上找了好些个教程，最后在自己摸索中，把环境装好了，记录一下。<br><a id="more"></a></p></blockquote><h3 id="安装python3-6"><a href="#安装python3-6" class="headerlink" title="安装python3.6"></a>安装python3.6</h3><p>这一步实在没什么好说的。</p><h3 id="安装TensorFlow-gpu-1-4-0"><a href="#安装TensorFlow-gpu-1-4-0" class="headerlink" title="安装TensorFlow-gpu 1.4.0"></a>安装TensorFlow-gpu 1.4.0</h3><p>这里我之前本来想安装最新的1.5.0rc1版本，但是这个版本需要CUDA 9.0，我不想重新下载CUDA了，所以选择了<strong>1.4.0</strong>版本。具体的报错信息如下：</p><pre><code>ImportError: Could not find &#39;cudart64_90.dll&#39;. TensorFlow requires that this DLL be installed in a directory that is named in your %PATH% environment variable. Download and install CUDA 9.0 from this URL: https://developer.nvidia.com/cuda-toolkit</code></pre><p>这一步记得选择正确的版本，因为我的是python3.6、Windows 64位、gpu版本，所有选择下载<a href="https://pypi.python.org/pypi/tensorflow-gpu/1.4.0" target="_blank" rel="noopener">tensorflow_gpu-1.4.0-cp36-cp36m-win_amd64.whl</a>。<br>使用命令<code>pip install tensorflow_gpu-1.4.0-cp36-cp36m-win_amd64.whl</code> 安装</p><h3 id="安装CUDA-8-0"><a href="#安装CUDA-8-0" class="headerlink" title="安装CUDA 8.0"></a>安装CUDA 8.0</h3><p>这一步也要选对版本，我之前看了好多教程，都是说要去<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads</a>下载，然而我下载的时候网站正在维护，然后是在<a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit-archive</a>这个网站下载的，这个网站提供所有版本的CUDA下载链接，我本来想下载CUDA Toolkit 8.0 GA2这个版本，但是local版的链接失效，所以最后下载了<strong>CUDA Toolkit 8.0 GA1</strong>。双击<code>.exe</code>文件安装成功后，可以在cmd里用命令<code>nvcc -V</code>测试，如果出现版本号就说明安装成功。</p><h3 id="安装cuDNN-v6"><a href="#安装cuDNN-v6" class="headerlink" title="安装cuDNN v6"></a>安装cuDNN v6</h3><p>本来是想安装v7版本的，但是TensorFlow 1.4好像需要用v6版本的，所以这里安装的版本是<strong>cuDNN v6.0 (April 27, 2017), for CUDA 8.0</strong>。<br>cuDNN的下载地址是<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-download</a>，这个网址提供所有版本的cuDNN下载，但是需要先注册，我选择的版本是<strong>cuDNN v6.0 (April 27, 2017), for CUDA 8.0</strong>，下载完成后是一个压缩包。解压缩之后是三个文件夹<code>/bin, /include, /lib</code>，将这三个文件夹复制到之前CUDA的安装目录下，我的是默认安装目录<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0</code>。</p><p>至此，整个安装过程就结束了，可以<code>import tensorflow as tf</code>测试一下，我这边已经成功了。</p><p>总结下来，就像一些教程里说的，版本真的非常重要，需要保证版本兼容才能安装成功，比如我这个环境就是<strong>win10+python3.6+tensorflow-gpu1.4.0+CUDA8.0+cuDNN v6</strong>。其他的版本我这里就没有探索了，之后版本升级，我应该还要继续更新，到时候做个版本适配总结。</p><p>参考：<br><a href="http://blog.csdn.net/vera__zhang/article/details/78531550" target="_blank" rel="noopener">http://blog.csdn.net/vera__zhang/article/details/78531550</a><br><a href="http://blog.csdn.net/u010099080/article/details/53418159" target="_blank" rel="noopener">http://blog.csdn.net/u010099080/article/details/53418159</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;之前换了新电脑，一直没来得及把TensorFlow装上，电脑是惠普 战66，有独显MX150，所以这次安装的是gpu版，网上找了好些个教程，最后在自己摸索中，把环境装好了，记录一下。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="分享境" scheme="http://oyeblog.com/categories/%E5%88%86%E4%BA%AB%E5%A2%83/"/>
+    
+    
+      <category term="Tensorflow" scheme="http://oyeblog.com/tags/Tensorflow/"/>
+    
+      <category term="Install" scheme="http://oyeblog.com/tags/Install/"/>
+    
+  </entry>
   
   <entry>
     <title>2017年终总结</title>
