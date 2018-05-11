@@ -57,11 +57,11 @@
          
         <tag>Deep Learning</tag>
          
-        <tag>Paper</tag>
-         
         <tag>Relation Classification</tag>
          
         <tag>Reinforcement Learning</tag>
+         
+        <tag>Paper</tag>
          
          
            
@@ -177,9 +177,9 @@
          
         <tag>Deep Learning</tag>
          
-        <tag>Embedding</tag>
-         
         <tag>Paper</tag>
+         
+        <tag>Embedding</tag>
          
          
            
@@ -247,9 +247,9 @@
         <title>Blog 折腾记</title>
         <pubTime>2017-10-11T15:06:00.000Z</pubTime>
         
-        <tag>Blog</tag>
-         
         <tag>Hexo</tag>
+         
+        <tag>Blog</tag>
          
          
            
@@ -269,11 +269,11 @@
         <title>Hello World</title>
         <pubTime>2017-08-01T11:11:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>Life</tag>
          
         <tag>Jekyll</tag>
+         
+        <tag>Hexo</tag>
          
          
            
@@ -357,13 +357,13 @@
         <title>参加CCKS2017 Task_2有感</title>
         <pubTime>2017-09-12T11:07:43.000Z</pubTime>
         
-        <tag>CCKS</tag>
-         
         <tag>Knowledge Graph</tag>
          
         <tag>NLP</tag>
          
         <tag>Deep Learning</tag>
+         
+        <tag>CCKS</tag>
          
         <tag>NER</tag>
          
