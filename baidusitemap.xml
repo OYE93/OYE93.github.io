@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://oyeblog.com/2018/tensorflow_serving/</loc>
+    <lastmod>2018-07-24T14:31:42.817Z</lastmod>
+    <data>
+        <display>
+        <title>Tensorflow Serving 填坑记</title>
+        <pubTime>2018-07-23T12:20:00.000Z</pubTime>
+        
+        <tag>TensorFlow</tag>
+         
+        <tag>Serving</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="http://oyeblog.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://oyeblog.com/2018/install_tensorflow_gpu/</loc>
     <lastmod>2018-01-16T15:03:41.616Z</lastmod>
     <data>
@@ -357,13 +379,13 @@
         <title>参加CCKS2017 Task_2有感</title>
         <pubTime>2017-09-12T11:07:43.000Z</pubTime>
         
+        <tag>CCKS</tag>
+         
         <tag>Knowledge Graph</tag>
          
         <tag>NLP</tag>
          
         <tag>Deep Learning</tag>
-         
-        <tag>CCKS</tag>
          
         <tag>NER</tag>
          
