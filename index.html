@@ -302,6 +302,28 @@
         
     
 
+    <!-- top scroll bar -->
+    <style type="text/css">
+    .top-scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 0;
+    height: 2px;
+    background: #6d6d6d;
+    }
+    </style>
+    <div class="top-scroll-bar"></div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $(window).scroll(function(){
+        $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+      });
+    });
+    </script>
+
 <link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -333,7 +355,7 @@
 
     <!-- Pic & Slogan -->
     <!-- <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://oyeblog-1258451837.file.myqcloud.com/post-header/daily_pic.png)"> -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://bing.ioliu.cn/v1/rand/?w=1280&h=768)">
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://bing.ioliu.cn/v1/rand/?w=800&h=480)">
         <p class="index-top-block-slogan"><a href="#">
         
             
@@ -1173,6 +1195,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import JS File -->
+<script>lsloader.load("personalize_js","/js/personalize.js?O6npzXqci33wBckVx/uJWg==", true)</script>
 
     <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
 
