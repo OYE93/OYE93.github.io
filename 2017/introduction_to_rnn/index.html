@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -20,16 +20,16 @@
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source">
 
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
 
 
 
 
-        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+        <link rel="dns-prefetch" href="https://hm.baidu.com">
 
 
 
@@ -51,10 +51,10 @@
     <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#616161">
     <meta name="author" content="Travon">
-    <meta name="description" itemprop="description" content="">
+    <meta name="description" itemprop="description" content>
     <meta name="keywords" content="Travon, 欧阳恩,Deep Learning,RNN,Introduction,Translation">
 
     <!-- Import lsloader -->
@@ -84,8 +84,8 @@
     <meta name="apple-mobile-web-app-title" content="Travon&#39;s Blog">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI" />
-    <meta name="baidu-site-verification" content="tTo6A998Ff" />
+    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI">
+    <meta name="baidu-site-verification" content="tTo6A998Ff">
 
     <!-- RSS -->
     
@@ -244,25 +244,25 @@
     <meta property="og:url" content="http://oyeblog.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Introduction to RNNs | Travon&#39;s Blog">
-    <meta property="og:image" content="http://oyeblog.com/img/favicon.png" />
-    <meta property="og:description" content="">
+    <meta property="og:image" content="http://oyeblog.com/img/favicon.png">
+    <meta property="og:description" content>
     <meta property="og:article:tag" content="Deep Learning"> <meta property="og:article:tag" content="RNN"> <meta property="og:article:tag" content="Introduction"> <meta property="og:article:tag" content="Translation"> 
 
     
-        <meta property="article:published_time" content="Wed Oct 11 2017 19:11:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:40 GMT+0800" />
+        <meta property="article:published_time" content="Wed Oct 11 2017 19:11:00 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="Introduction to RNNs | Travon&#39;s Blog">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:description" content>
     <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://oyeblog.com" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://oyeblog.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://oyeblog.com/2017/introduction_to_rnn/index.html" />
+        <link rel="canonical" href="http://oyeblog.com/2017/introduction_to_rnn/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -391,13 +391,12 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-are-RNNs"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#What-are-RNNs" class="headerlink" title="What are RNNs?"></a>What are RNNs?</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-can-RNNs-do"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#What-can-RNNs-do" class="headerlink" title="What can RNNs do?"></a>What can RNNs do?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Language-Modeling-and-Generating-Text"><span class="post-toc-number">2.1.</span> <span class="post-toc-text"><a href="#Language-Modeling-and-Generating-Text" class="headerlink" title="Language Modeling and Generating Text"></a>Language Modeling and Generating Text</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Machine-Translation"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#Machine-Translation" class="headerlink" title="Machine Translation"></a>Machine Translation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Speech-Recognition"><span class="post-toc-number">3.1.</span> <span class="post-toc-text"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generating-Image-Descriptions"><span class="post-toc-number">3.2.</span> <span class="post-toc-text"><a href="#Generating-Image-Descriptions" class="headerlink" title="Generating Image Descriptions"></a>Generating Image Descriptions</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Training-RNNs"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#Training-RNNs" class="headerlink" title="Training RNNs"></a>Training RNNs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RNN-Extensions"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#RNN-Extensions" class="headerlink" title="RNN Extensions"></a>RNN Extensions</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bidirectional-RNN"><span class="post-toc-number">5.1.</span> <span class="post-toc-text"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deep-Bidirectional-RNN"><span class="post-toc-number">5.2.</span> <span class="post-toc-text"><a href="#Deep-Bidirectional-RNN" class="headerlink" title="Deep Bidirectional RNN"></a>Deep Bidirectional RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM-networks"><span class="post-toc-number">5.3.</span> <span class="post-toc-text"><a href="#LSTM-networks" class="headerlink" title="LSTM networks"></a>LSTM networks</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">6.</span> <span class="post-toc-text"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-are-RNNs"><span class="post-toc-number">1.</span> <span class="post-toc-text">What are RNNs?</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-can-RNNs-do"><span class="post-toc-number">2.</span> <span class="post-toc-text">What can RNNs do?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Language-Modeling-and-Generating-Text"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Language Modeling and Generating Text</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Machine-Translation"><span class="post-toc-number">3.</span> <span class="post-toc-text">Machine Translation</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Speech-Recognition"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Speech Recognition</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generating-Image-Descriptions"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Generating Image Descriptions</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Training-RNNs"><span class="post-toc-number">4.</span> <span class="post-toc-text">Training RNNs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RNN-Extensions"><span class="post-toc-number">5.</span> <span class="post-toc-text">RNN Extensions</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bidirectional-RNN"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Bidirectional RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deep-Bidirectional-RNN"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Deep Bidirectional RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM-networks"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">LSTM networks</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">6.</span> <span class="post-toc-text">Conclusion</span></a></li></ol>
     </ul>
     
 
@@ -434,7 +433,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -476,7 +475,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Introduction/">Introduction</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/RNN/">RNN</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Translation/">Translation</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -551,7 +550,7 @@
 <p>最近在找关于deep learning的基础知识看，找到一个比较推荐的<a href="http://www.wildml.com" title="WILDML" target="_blank" rel="noopener">英文博客</a>介绍，为了加深一下映象，决定翻译一遍。采取中英文对照的形式。</p>
 </blockquote>
 <h2 id="What-are-RNNs"><a href="#What-are-RNNs" class="headerlink" title="What are RNNs?"></a>What are RNNs?</h2><p><em>The idea behind RNNs is to make use of sequential information. In a traditional neural network we assume that all inputs (and outputs) are independent of each other. But for many tasks that’s a very bad idea. If you want to predict the next word in a sentence you better know which words came before it. RNNs are called recurrent because they perform the same task for every element of a sequence, with the output being depended on the previous computations. Another way to think about RNNs is that they have a “memory” which captures information about what has been calculated so far. In theory RNNs can make use of information in arbitrarily long sequences, but in practice they are limited to looking back only a few steps (more on this later). Here is what a typical RNN looks like:</em></p>
-<p>Recurrent Neural Networks (RNNs)背后的思想是充分利用序列信息。在传统的神经网络中，我们是假设所有的输入（或者输出）之间是相互独立的。但是在一些任务中，这个假设是非常不合理的。比如，如果你想预测某个句子中的下一个词，那么最好能知道这个词的前一个词是什么。RNN之所以叫循环的（recurrent），是因为它对于序列中的每一个元素执行相同的操作，而且输出是依赖于前一步的计算。也可以从另一种角度来理解RNN，就是它拥有记忆前面所有计算得到的信息的能力。理论上，RNN可以利用任意长度序列中的信息，但是在实践中只能回溯到有限的几步。下面是一个典型的RNN图示：<br><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/rnn.jpg" alt="" title="RNN"><br>Source: Nature</p>
+<p>Recurrent Neural Networks (RNNs)背后的思想是充分利用序列信息。在传统的神经网络中，我们是假设所有的输入（或者输出）之间是相互独立的。但是在一些任务中，这个假设是非常不合理的。比如，如果你想预测某个句子中的下一个词，那么最好能知道这个词的前一个词是什么。RNN之所以叫循环的（recurrent），是因为它对于序列中的每一个元素执行相同的操作，而且输出是依赖于前一步的计算。也可以从另一种角度来理解RNN，就是它拥有记忆前面所有计算得到的信息的能力。理论上，RNN可以利用任意长度序列中的信息，但是在实践中只能回溯到有限的几步。下面是一个典型的RNN图示：<br><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/rnn.jpg" alt title="RNN"><br>Source: Nature</p>
 <p><em>The above diagram shows a RNN being unrolled (or unfolded) into a full network. By unrolling we simply mean that we write out the network for the complete sequence. For example, if the sequence we care about is a sentence of 5 words, the network would be unrolled into a 5-layer neural network, one layer for each word. The formulas that govern the computation happening in a RNN are as follows:</em></p>
 <p>上面的图展示了一个RNN展开成全网络的情况。通过展开，我们简单的把整个序列表示成网络形式。举个例子，如果序列的长度是5，那么整个网络会被展开成5层，每一层对应一个词。图中的参数以及一些计算公式如下：</p>
 <p><em>$x_t$ is the input at time step $t$. For example, $x_1$ could be a one-hot vector corresponding to the second word of a sentence.<br>$s_t$ is the hidden state at time step $t$. It’s the “memory” of the network. $s_t$ is calculated based on the previous hidden state and the input at the current step: $s_t=f(Ux_t + Ws_{t-1})$. The function $f$ usually is a nonlinearity such as <a href="https://reference.wolfram.com/language/ref/Tanh.html" target="_blank" rel="noopener">tanh</a> or <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)" target="_blank" rel="noopener">ReLU</a>.  $s_{-1}$, which is required to calculate the first hidden state, is typically initialized to all zeroes.<br>$o_t$ is the output at step $t$. For example, if we wanted to predict the next word in a sentence it would be a vector of probabilities across our vocabulary. $o_t = \mathrm{softmax}(Vs_t)$.<br>There are a few things to note here:</em></p>
@@ -575,7 +574,7 @@
 </ul>
 <h2 id="Machine-Translation"><a href="#Machine-Translation" class="headerlink" title="Machine Translation"></a>Machine Translation</h2><p><em>Machine Translation is similar to language modeling in that our input is a sequence of words in our source language (e.g. German). We want to output a sequence of words in our target language (e.g. English). A key difference is that our output only starts after we have seen the complete input, because the first word of our translated sentences may require information captured from the complete input sequence.</em></p>
 <p><strong>机器翻译</strong> 和语言建模比较类似。只是在机器翻译中，我们的输入是源语言（比如：德语）的词序列，而我们想得到的输出是目标语言（比如：英语）的词序列。关键的不同在于我们的输出是在看了所有的输入之后进行，因为翻译的句子的第一个词有可能需要整个输入序列的信息。</p>
-<p><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-10.39.06-AM.png" alt="" title="RNN for Machine Translation"><br>Source: <a href="http://cs224d.stanford.edu/lectures/CS224d-Lecture8.pdf" target="_blank" rel="noopener">http://cs224d.stanford.edu/lectures/CS224d-Lecture8.pdf</a></p>
+<p><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-10.39.06-AM.png" alt title="RNN for Machine Translation"><br>Source: <a href="http://cs224d.stanford.edu/lectures/CS224d-Lecture8.pdf" target="_blank" rel="noopener">http://cs224d.stanford.edu/lectures/CS224d-Lecture8.pdf</a></p>
 <p><em>Research papers about Machine Translation:</em></p>
 <p>关于机器翻译的文章：</p>
 <ul>
@@ -592,7 +591,7 @@
 </ul>
 <h3 id="Generating-Image-Descriptions"><a href="#Generating-Image-Descriptions" class="headerlink" title="Generating Image Descriptions"></a>Generating Image Descriptions</h3><p><em>Together with convolutional Neural Networks, RNNs have been used as part of a model to generate descriptions for unlabeled images. It’s quite amazing how well this seems to work. The combined model even aligns the generated words with features found in the images.</em></p>
 <p><strong>生成图片描述</strong> 结合卷积神经网络，RNN开始被作为未标注图片的描述生成模型的一部分，而且取得令人惊喜的结果。这个联合模型甚至可以把生成的文字和找到的图片特征整合起来。</p>
-<p><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.44.24-AM.png" alt="" title="Deep Visual-Semantic Alignments for Generating Image Descriptions"><br>Source: <a href="http://cs.stanford.edu/people/karpathy/deepimagesent/" target="_blank" rel="noopener">http://cs.stanford.edu/people/karpathy/deepimagesent/</a></p>
+<p><img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.44.24-AM.png" alt title="Deep Visual-Semantic Alignments for Generating Image Descriptions"><br>Source: <a href="http://cs.stanford.edu/people/karpathy/deepimagesent/" target="_blank" rel="noopener">http://cs.stanford.edu/people/karpathy/deepimagesent/</a></p>
 <h2 id="Training-RNNs"><a href="#Training-RNNs" class="headerlink" title="Training RNNs"></a>Training RNNs</h2><p><em>Training a RNN is similar to training a traditional Neural Network. We also use the backpropagation algorithm, but with a little twist. Because the parameters are shared by all time steps in the network, the gradient at each output depends not only on the calculations of the current time step, but also the previous time steps. For example, in order to calculate the gradient at <code>t=4</code> we would need to backpropagate 3 steps and sum up the gradients. This is called Backpropagation Through Time (BPTT). If this doesn’t make a whole lot of sense yet, don’t worry, we’ll have a whole post on the gory details. For now, just be aware of the fact that vanilla RNNs trained with BPTT have difficulties learning long-term dependencies (e.g. dependencies between steps that are far apart) due to what is called the vanishing/exploding gradient problem. There exists some machinery to deal with these problems, and certain types of RNNs (like LSTMs) were specifically designed to get around them.</em></p>
 <p>训练RNN模型与训练传统神经网络模型差不多，都是使用反向传播算法，但是会有点曲折。因为参数是共享的，所以每个输出的梯度不仅取决于当前步骤的计算，也取决于前面步骤的。比如，为了计算<code>t=4</code>这个时刻的梯度，需要反向传播3步，求梯度之和，这也叫做“Backpropagation Through Time (BPTT)”。如果上面的描述还令你有点困惑也不用担心，之后会有一篇详细的说明。现在只需要清楚，因为存在梯度消失和梯度爆炸的问题，用BPTT训练的vanilla RNNs模型在学习长距离依赖（比如：相距很远的步骤间的依赖）时是有困难的。当然，现在也有一些机制来解决这些问题，也有像LSTM这样类型的RNN模型专门来避开这个问题的。</p>
 <h2 id="RNN-Extensions"><a href="#RNN-Extensions" class="headerlink" title="RNN Extensions"></a>RNN Extensions</h2><p><em>Over the years researchers have developed more sophisticated types of RNNs to deal with some of the shortcomings of the vanilla RNN model. We will cover them in more detail in a later post, but I want this section to serve as a brief overview so that you are familiar with the taxonomy of models.</em></p>
@@ -770,7 +769,7 @@
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -788,7 +787,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
-            </ul>
+            </li></ul>
         </li>
         
             <li class="divider"></li>
@@ -965,7 +964,7 @@ It will not impact the appearance and can give developers a lot of support :)
         <!--Copyright-->
         <div id="copyright">
             Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Travon's Blog
-            <br/>
+            <br>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
             
         </div>

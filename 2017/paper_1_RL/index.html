@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -20,16 +20,16 @@
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source">
 
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
 
 
 
 
-        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+        <link rel="dns-prefetch" href="https://hm.baidu.com">
 
 
 
@@ -51,7 +51,7 @@
     <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#616161">
     <meta name="author" content="Travon">
     <meta name="description" itemprop="description" content="这篇文章是Reinforcement Learning在NLP方面的应用，具体是用在有噪音训练集的实体关系分类问题上，已经被AAAI 2018录用，作者之前也在PaperWeekly分享过了，最近一个前同事提到Reinforcement Learning应该会是NLP的下一个热点，想想应该也是这么回事，就像之前的Attention机制一样。因此在了解了Reinforcement Learning的基本概念之后，又把这篇文章细读一遍。">
@@ -84,8 +84,8 @@
     <meta name="apple-mobile-web-app-title" content="Travon&#39;s Blog">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI" />
-    <meta name="baidu-site-verification" content="tTo6A998Ff" />
+    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI">
+    <meta name="baidu-site-verification" content="tTo6A998Ff">
 
     <!-- RSS -->
     
@@ -244,25 +244,25 @@
     <meta property="og:url" content="http://oyeblog.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Reinforcement Learning for Relation Classification from Noisy Data | Travon&#39;s Blog">
-    <meta property="og:image" content="http://oyeblog.com/img/favicon.png" />
+    <meta property="og:image" content="http://oyeblog.com/img/favicon.png">
     <meta property="og:description" content="这篇文章是Reinforcement Learning在NLP方面的应用，具体是用在有噪音训练集的实体关系分类问题上，已经被AAAI 2018录用，作者之前也在PaperWeekly分享过了，最近一个前同事提到Reinforcement Learning应该会是NLP的下一个热点，想想应该也是这么回事，就像之前的Attention机制一样。因此在了解了Reinforcement Learning的基本概念之后，又把这篇文章细读一遍。">
     <meta property="og:article:tag" content="NLP"> <meta property="og:article:tag" content="Deep Learning"> <meta property="og:article:tag" content="Paper"> <meta property="og:article:tag" content="Relation Classification"> <meta property="og:article:tag" content="Reinforcement Learning"> 
 
     
-        <meta property="article:published_time" content="Tue Dec 12 2017 19:11:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:11 GMT+0800" />
+        <meta property="article:published_time" content="Tue Dec 12 2017 19:11:00 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:11 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="Reinforcement Learning for Relation Classification from Noisy Data | Travon&#39;s Blog">
     <meta name="twitter:description" content="这篇文章是Reinforcement Learning在NLP方面的应用，具体是用在有噪音训练集的实体关系分类问题上，已经被AAAI 2018录用，作者之前也在PaperWeekly分享过了，最近一个前同事提到Reinforcement Learning应该会是NLP的下一个热点，想想应该也是这么回事，就像之前的Attention机制一样。因此在了解了Reinforcement Learning的基本概念之后，又把这篇文章细读一遍。">
     <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://oyeblog.com" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://oyeblog.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://oyeblog.com/2017/paper_1_RL/index.html" />
+        <link rel="canonical" href="http://oyeblog.com/2017/paper_1_RL/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -391,13 +391,12 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#摘要"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x6458;&#x8981;" class="headerlink" title="&#x6458;&#x8981;"></a>&#x6458;&#x8981;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x6A21;&#x578B;" class="headerlink" title="&#x6A21;&#x578B;"></a>&#x6A21;&#x578B;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Instance-Selector"><span class="post-toc-number">3.1.</span> <span class="post-toc-text"><a href="#Instance-Selector" class="headerlink" title="Instance Selector"></a>Instance Selector</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Relation-Classifier"><span class="post-toc-number">3.2.</span> <span class="post-toc-text"><a href="#Relation-Classifier" class="headerlink" title="Relation Classifier"></a>Relation Classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#试验"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x8BD5;&#x9A8C;" class="headerlink" title="&#x8BD5;&#x9A8C;"></a>&#x8BD5;&#x9A8C;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#训练过程"><span class="post-toc-number">4.1.</span> <span class="post-toc-text"><a href="#&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;"></a>&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果"><span class="post-toc-number">4.2.</span> <span class="post-toc-text"><a href="#&#x7ED3;&#x679C;" class="headerlink" title="&#x7ED3;&#x679C;"></a>&#x7ED3;&#x679C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#附加分析"><span class="post-toc-number">4.3.</span> <span class="post-toc-text"><a href="#&#x9644;&#x52A0;&#x5206;&#x6790;" class="headerlink" title="&#x9644;&#x52A0;&#x5206;&#x6790;"></a>&#x9644;&#x52A0;&#x5206;&#x6790;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思考"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#&#x601D;&#x8003;" class="headerlink" title="&#x601D;&#x8003;"></a>&#x601D;&#x8003;</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#摘要"><span class="post-toc-number">1.</span> <span class="post-toc-text">摘要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型"><span class="post-toc-number">3.</span> <span class="post-toc-text">模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Instance-Selector"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Instance Selector</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Relation-Classifier"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Relation Classifier</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#试验"><span class="post-toc-number">4.</span> <span class="post-toc-text">试验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#训练过程"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">训练过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#附加分析"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">附加分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思考"><span class="post-toc-number">5.</span> <span class="post-toc-text">思考</span></a></li></ol>
     </ul>
     
 
@@ -434,7 +433,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -476,7 +475,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/NLP/">NLP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Paper/">Paper</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Reinforcement-Learning/">Reinforcement Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Relation-Classification/">Relation Classification</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -550,9 +549,9 @@
         <p>这篇文章是Reinforcement Learning在NLP方面的应用，具体是用在有噪音训练集的实体关系分类问题上，已经被AAAI 2018录用，作者之前也在<a href="https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247486440&amp;idx=2&amp;sn=d43b6799f62337ec19f405bed1cd0138&amp;chksm=96e9d468a19e5d7ea1cd673045eaa57dd8f5bee49074b6ef0f4fc64558e4626a0461867b216b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">PaperWeekly</a>分享过了，最近一个前同事提到Reinforcement Learning应该会是NLP的下一个热点，想想应该也是这么回事，就像之前的Attention机制一样。因此在了解了Reinforcement Learning的基本概念之后，又把这篇文章细读一遍。<br><a id="more"></a><br>链接：<a href="http://aihuang.org/static/papers/AAAI2018Denoising.pdf" target="_blank" rel="noopener">Reinforcement Learning for Relation Classification from Noisy Data</a></p>
 <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>现有的关系分类方法主要依赖于<strong>距离监督（distant supervision）</strong>，主要的假设是假如有一组句子都提到了一个实体对，那么这些句子就都描述了这个实体对的一个关系（<em>我觉得可能就是和共现差不多吧</em>）。这些方法一般都是在句子集的层面进行分类，而不能把关系和句子一一对应起来，造成这个问题的主要原因是标注数据集里有噪声数据。作者在这篇文章里提出了一种新的方法，这种方法可以在有噪声的数据上做到句子层面的关系分类。这个模型有两个组成部分：<strong>实例选取器（instance selector）</strong>和<strong>关系分类器（relation classifier）</strong>。实例选取器用强化学习的方法选取高质量的句子，并传递给关系分类器，关系分类器在句子层面作出预测，并反馈给实例选取器。这两个模块共同训练、优化。实验结果表明这样的方法可以有效处理训练数据中的噪声，从而在句子层面的关系分类上取得更好的performance。</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>为解决标注数据含噪声的问题，现有的Bag Level的关系分类方法有两个缺陷：1. 不能处理句子级别的关系分类； 2. 假如‘Bag’中的所有句子都是噪声句子，对模型的影响很大。下图是对第一个缺陷的解释说明，<em>‘Bag-Level’</em>也就是relation的label是给Bag的，这一组句子包含同一个实体对，描述了哪些关系，而<em>‘Sentence-Level’</em>的relation label是给Sentence的，也就是对每一个句子指定一个关系类型。造成第二个缺陷的原因是，即使‘Bag’中所有句子都是噪声（也就是这些句子都没有描述某个关系），模型也会选取至少一个句子，认为选取的句子描述了某个关系，进而基于这些句子进行模型训练，而且假如标注集只是简单基于距离监督得到，这样的情况是很常见的，因此这样训练得到的分类模型的performance肯定会下降。</p>
-<p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_example.JPG" alt=""></p>
+<p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_example.JPG" alt></p>
 <p>为了解决上述的两个缺陷，作者提出加入实例选取器，并将其转换成一个强化学习问题来解决。因为这个选取器有以下两个特征：首先，这个句子选取是一个反复试错（<em>trial-and-error-search</em>）的过程，需要从分类器得到对选取的句子质量的反馈（<em>reward</em>）；其次，上述的反馈只能在整个挑选过程结束之后才能得到，因此反馈是滞后（<em>delayed</em>）的。这两点都非常符合强化学习的特点。</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_model.JPG" alt=""></p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_model.JPG" alt></p>
 <p>上图是整个模型的框架，由Instance Selector和Relation Classifier两部分组成，下面具体介绍两部分。</p>
 <h3 id="Instance-Selector"><a href="#Instance-Selector" class="headerlink" title="Instance Selector"></a>Instance Selector</h3><p>因为Instance Selector是当作强化学习问题处理，因此policy function的更新会滞后，为了加快更新速度，作者采用了把所有句子分成$N$个Bag的做法，即$B={B^1, B^2,\cdots, B^N}$。对于每个$B^k$，都包含同一个实体对，而且标注的关系都是$r^k$，虽然这个标注可能是有噪声的（不准确的）。之后的训练都是以一个Bag为单位进行操作。<br>下面就要介绍作为强化学习，<strong>State</strong>、<strong>Action</strong>、<strong>Reward</strong>的定义。  </p>
 <ul>
@@ -625,8 +624,8 @@
 <ul>
 <li><strong>评价方式</strong> 因为本身数据集是有噪音的，所以作者随机选取了<strong>300</strong>个句子，人工标注，然后在这些句子上做评测，评测包括Accuracy和Macro F-value。设定的baseline包括：CNN、CNN+Max（每个bag里选一个认为正确的句子）、CNN+ATT（加入attention机制，降低噪声数据的权重）。</li>
 </ul>
-<h3 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h3><p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_training_process.PNG" alt="" title="训练过程"><br>ALGORITHM 1描述的是整体训练过程，也就是先预训练CNN分类模型，使得$log p(r_i|x_i)$最大，然后固定CNN分类器，预训练policy network，最后联合训练两个模型直至收敛。<br>ALGORITHM 2描述的是具体怎么实现联合训练，对于每一次的epoch，分为N个word bag，对于每个$B_i$，在计算完reward之后实例选取器的参数要更新一次，而CNN分类器的参数只有在整个epoch结束才会更新。</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><font color="red">因为后两个模型是bag level的，所以在评价的时候是把一个句子当成一个bag来处理的</font>，最终结果如下：<br><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_result.PNG" alt=""><br>可以看出文章的模型取得最好的performance，而且句子层次的模型相比较于bag层次的模型，在这个评测中表现更好，这也是理所当然。</p>
+<h3 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h3><p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_training_process.PNG" alt title="训练过程"><br>ALGORITHM 1描述的是整体训练过程，也就是先预训练CNN分类模型，使得$log p(r_i|x_i)$最大，然后固定CNN分类器，预训练policy network，最后联合训练两个模型直至收敛。<br>ALGORITHM 2描述的是具体怎么实现联合训练，对于每一次的epoch，分为N个word bag，对于每个$B_i$，在计算完reward之后实例选取器的参数要更新一次，而CNN分类器的参数只有在整个epoch结束才会更新。</p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><font color="red">因为后两个模型是bag level的，所以在评价的时候是把一个句子当成一个bag来处理的</font>，最终结果如下：<br><img src="https://oyeblog-1258451837.file.myqcloud.com/post/paper_1_result.PNG" alt><br>可以看出文章的模型取得最好的performance，而且句子层次的模型相比较于bag层次的模型，在这个评测中表现更好，这也是理所当然。</p>
 <h3 id="附加分析"><a href="#附加分析" class="headerlink" title="附加分析"></a>附加分析</h3><p>分别对实例选取器和关系分类器作了分析：</p>
 <ol>
 <li>分析加入实例选取器是否对performance提高有帮助（方法：在原始数据和选取出来的数据上分别训练模型）。</li>
@@ -806,7 +805,7 @@
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -824,7 +823,7 @@
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
-            </ul>
+            </li></ul>
         </li>
         
             <li class="divider"></li>
@@ -1001,7 +1000,7 @@ It will not impact the appearance and can give developers a lot of support :)
         <!--Copyright-->
         <div id="copyright">
             Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Travon's Blog
-            <br/>
+            <br>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
             
         </div>

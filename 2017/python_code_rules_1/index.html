@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -20,16 +20,16 @@
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source"/>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source">
 
 
 
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
 
 
 
 
-        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+        <link rel="dns-prefetch" href="https://hm.baidu.com">
 
 
 
@@ -51,7 +51,7 @@
     <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#616161">
     <meta name="author" content="Travon">
     <meta name="description" itemprop="description" content="最近已经在找工作了，发现各个公司对代码能力要求还是比较高的，谁叫咱还是要干码农的活呢，所以决心改一改自己的代码习惯，写出漂亮的代码。虽说重要的是实现功能，但是代码看起来漂亮，也会让人更舒服吧。下面会记录一些自己以前不太注意到的地方，主要准则还是“有则改之，无则加勉”。主要分成风格规范和语言规范两类。这篇是讲风格规范。">
@@ -84,8 +84,8 @@
     <meta name="apple-mobile-web-app-title" content="Travon&#39;s Blog">
 
     <!-- Site Verification -->
-    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI" />
-    <meta name="baidu-site-verification" content="tTo6A998Ff" />
+    <meta name="google-site-verification" content="t2L8DsCgKwMGZ5LZVwtyy5kVafU7EA7NgDTE_RjuRUI">
+    <meta name="baidu-site-verification" content="tTo6A998Ff">
 
     <!-- RSS -->
     
@@ -244,25 +244,25 @@
     <meta property="og:url" content="http://oyeblog.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="不被注意的Python代码规范(1)---风格规范 | Travon&#39;s Blog">
-    <meta property="og:image" content="http://oyeblog.com/img/favicon.png" />
+    <meta property="og:image" content="http://oyeblog.com/img/favicon.png">
     <meta property="og:description" content="最近已经在找工作了，发现各个公司对代码能力要求还是比较高的，谁叫咱还是要干码农的活呢，所以决心改一改自己的代码习惯，写出漂亮的代码。虽说重要的是实现功能，但是代码看起来漂亮，也会让人更舒服吧。下面会记录一些自己以前不太注意到的地方，主要准则还是“有则改之，无则加勉”。主要分成风格规范和语言规范两类。这篇是讲风格规范。">
     <meta property="og:article:tag" content="Python"> <meta property="og:article:tag" content="Code"> <meta property="og:article:tag" content="Standard"> 
 
     
-        <meta property="article:published_time" content="Tue Nov 14 2017 19:11:00 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:35 GMT+0800" />
+        <meta property="article:published_time" content="Tue Nov 14 2017 19:11:00 GMT+0800">
+        <meta property="article:modified_time" content="Sun Jan 06 2019 22:18:35 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="不被注意的Python代码规范(1)---风格规范 | Travon&#39;s Blog">
     <meta name="twitter:description" content="最近已经在找工作了，发现各个公司对代码能力要求还是比较高的，谁叫咱还是要干码农的活呢，所以决心改一改自己的代码习惯，写出漂亮的代码。虽说重要的是实现功能，但是代码看起来漂亮，也会让人更舒服吧。下面会记录一些自己以前不太注意到的地方，主要准则还是“有则改之，无则加勉”。主要分成风格规范和语言规范两类。这篇是讲风格规范。">
     <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://oyeblog.com" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://oyeblog.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://oyeblog.com/2017/python_code_rules_1/index.html" />
+        <link rel="canonical" href="http://oyeblog.com/2017/python_code_rules_1/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -391,13 +391,12 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最长行"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x6700;&#x957F;&#x884C;" class="headerlink" title="&#x6700;&#x957F;&#x884C;"></a>&#x6700;&#x957F;&#x884C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缩进"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x7F29;&#x8FDB;" class="headerlink" title="&#x7F29;&#x8FDB;"></a>&#x7F29;&#x8FDB;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空行"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x7A7A;&#x884C;" class="headerlink" title="&#x7A7A;&#x884C;"></a>&#x7A7A;&#x884C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空格"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x7A7A;&#x683C;" class="headerlink" title="&#x7A7A;&#x683C;"></a>&#x7A7A;&#x683C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#&#x6CE8;&#x91CA;" class="headerlink" title="&#x6CE8;&#x91CA;"></a>&#x6CE8;&#x91CA;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">6.</span> <span class="post-toc-text"><a href="#&#x5B57;&#x7B26;&#x4E32;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;"></a>&#x5B57;&#x7B26;&#x4E32;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件"><span class="post-toc-number">7.</span> <span class="post-toc-text"><a href="#&#x6587;&#x4EF6;" class="headerlink" title="&#x6587;&#x4EF6;"></a>&#x6587;&#x4EF6;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入格式"><span class="post-toc-number">8.</span> <span class="post-toc-text"><a href="#&#x5BFC;&#x5165;&#x683C;&#x5F0F;" class="headerlink" title="&#x5BFC;&#x5165;&#x683C;&#x5F0F;"></a>&#x5BFC;&#x5165;&#x683C;&#x5F0F;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命名"><span class="post-toc-number">9.</span> <span class="post-toc-text"><a href="#&#x547D;&#x540D;" class="headerlink" title="&#x547D;&#x540D;"></a>&#x547D;&#x540D;</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最长行"><span class="post-toc-number">1.</span> <span class="post-toc-text">最长行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缩进"><span class="post-toc-number">2.</span> <span class="post-toc-text">缩进</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空行"><span class="post-toc-number">3.</span> <span class="post-toc-text">空行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空格"><span class="post-toc-number">4.</span> <span class="post-toc-text">空格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释"><span class="post-toc-number">5.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">6.</span> <span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件"><span class="post-toc-number">7.</span> <span class="post-toc-text">文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#导入格式"><span class="post-toc-number">8.</span> <span class="post-toc-text">导入格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命名"><span class="post-toc-number">9.</span> <span class="post-toc-text">命名</span></a></li></ol>
     </ul>
     
 
@@ -434,7 +433,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -476,7 +475,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Code/">Code</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Python/">Python</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Standard/">Standard</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -573,7 +572,8 @@ foo <span class="token operator">=</span> <span class="token punctuation">{</spa
         value1 <span class="token operator">+</span> value2<span class="token punctuation">,</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><p>高级定义（函数或者类）之间空两行，方法定义之间，以及<code>class</code>定义行和第一个方法定义行之间空一行。</p>
 <h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>根据印刷标准的要求，来使用标点周围的空格。<br>当’=’出现在表示关键值或者默认参数值时，周围不需要加空格，如下：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">complex</span><span class="token punctuation">(</span>real<span class="token punctuation">,</span> imag<span class="token operator">=</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
@@ -915,7 +915,7 @@ employee_table <span class="token operator">=</span> <span class="token string">
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -933,7 +933,7 @@ employee_table <span class="token operator">=</span> <span class="token string">
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
-            </ul>
+            </li></ul>
         </li>
         
             <li class="divider"></li>
@@ -1110,7 +1110,7 @@ It will not impact the appearance and can give developers a lot of support :)
         <!--Copyright-->
         <div id="copyright">
             Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Travon's Blog
-            <br/>
+            <br>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
             
         </div>
