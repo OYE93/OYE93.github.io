@@ -107,6 +107,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify/tranquil-heart.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -336,8 +341,10 @@
         
     
 
-    <!-- top scroll bar -->
-    <style type="text/css">
+    <!-- Top Scroll Bar -->
+    
+        <!-- top scroll bar -->
+<style type="text/css">
     .top-scroll-bar {
     position: fixed;
     top: 0;
@@ -345,21 +352,21 @@
     z-index: 9999;
     display: none;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #6d6d6d;
     }
-    </style>
-    <div class="top-scroll-bar"></div>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      $(window).scroll(function(){
-        $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
-      });
-    });
-    </script>
+</style>
+<div class="top-scroll-bar">
+<script type="text/javascript">
+$(document).ready(function () {
+  $(window).scroll(function(){
+    $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+  });
+});
+</script></div>
+    
 
-<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
     
@@ -566,19 +573,19 @@
 
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm install -g nodeppt</code><br>如果出现被qiang的情况可以用下面这个命令：<br><code>npm install -g nodeppt --registry=http://r.cnpmjs.org</code>  </p>
 <h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>支持markdown语法快速创建网页幻灯片。<br><code>nodeppt create ppt-name</code>  </p>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 获取帮助</span>
-nodeppt start <span class="token operator">-</span>h
-<span class="token comment" spellcheck="true"># 绑定端口</span>
-nodeppt start <span class="token operator">-</span>p <span class="token operator">&lt;</span>port<span class="token operator">></span>
-nodeppt start <span class="token operator">-</span>p <span class="token number">8090</span> <span class="token operator">-</span>d path<span class="token operator">/</span><span class="token keyword">for</span><span class="token operator">/</span>ppts
-<span class="token comment" spellcheck="true"># 绑定host，默认绑定0.0.0.0</span>
-nodeppt start <span class="token operator">-</span>p <span class="token number">8080</span> <span class="token operator">-</span>d path<span class="token operator">/</span><span class="token keyword">for</span><span class="token operator">/</span>ppts <span class="token operator">-</span>H <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code class="python"># 获取帮助
+nodeppt start -h
+# 绑定端口
+nodeppt start -p &lt;port&gt;
+nodeppt start -p 8090 -d path/for/ppts
+# 绑定host，默认绑定0.0.0.0
+nodeppt start -p 8080 -d path/for/ppts -H 127.0.0.1
+</code></pre>
 <h2 id="启用socket控制"><a href="#启用socket控制" class="headerlink" title="启用socket控制"></a>启用socket控制</h2><p>使用socket通信（按Q键显示/关闭二维码，手机扫描，即可控制）<br>socket须知：1、注意手机和pc要可以相互访问，2、防火墙，3、ip</p>
 <h3 id="方法1-使用url参数"><a href="#方法1-使用url参数" class="headerlink" title="方法1 使用url参数"></a>方法1 使用url参数</h3><p><code>http://127.0.0.1:8080/md/demo.md?controller=socket</code><br>在页面按键【Q】显示控制url的二维码和控制链接（需要隐身窗口打开），手机上可以使用左右touch滑动和摇一摇切换下一页</p>
 <h3 id="方法2-使用start命令行"><a href="#方法2-使用start命令行" class="headerlink" title="方法2 使用start命令行"></a>方法2 使用start命令行</h3><p><code>nodeppt start -c socket</code><br>在页面按键【Q】显示控制url的二维码和控制链接（需要隐身窗口打开），手机上可以使用左右touch滑动和摇一摇切换下一页</p>
 <h2 id="打印-amp-导出PPT"><a href="#打印-amp-导出PPT" class="headerlink" title="打印&amp;导出PPT"></a>打印&amp;导出PPT</h2><p>使用<code>url?print=1</code>访问页面，然后选择chrome的系统打印即可。  </p>
-<pre class="line-numbers language-shell"><code class="language-shell"># 获取generate帮助
+<pre><code class="shell"># 获取generate帮助
 nodeppt generate -h
 # 使用generate命令
 nodeppt generate filepath
@@ -587,40 +594,40 @@ nodeppt generate filepath
 nodeppt generate ./ppts/demo.md -a
 # 指定导出文件夹
 nodeppt generate ./ppts/demo.md output/path -a
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>这里可以生成<code>.html</code>文件，但是必须是<code>-a</code>模式，不然单独打开时没有PPT的效果。</p>
 <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>总体来说，nodePPT用的是Markdown，在此基础上做了一些扩展。</p>
-<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 演讲题目
-<span class="token key atrule">speaker</span><span class="token punctuation">:</span> 演讲者
-<span class="token key atrule">url</span><span class="token punctuation">:</span> 可以设置链接
-<span class="token key atrule">transition</span><span class="token punctuation">:</span> 转场效果，例如：zoomin/cards/slide，其他的可以参见github页面
-<span class="token key atrule">files</span><span class="token punctuation">:</span> 引入的js和css文件，多个以半角逗号隔开
-<span class="token key atrule">theme</span><span class="token punctuation">:</span> 皮肤样式
-<span class="token key atrule">highlightStyle</span><span class="token punctuation">:</span> 代码高亮样式，默认monokai_sublime
-<span class="token key atrule">usemathjax</span><span class="token punctuation">:</span> yes 启用MathJax渲染公式
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><pre><code class="yaml">title: 演讲题目
+speaker: 演讲者
+url: 可以设置链接
+transition: 转场效果，例如：zoomin/cards/slide，其他的可以参见github页面
+files: 引入的js和css文件，多个以半角逗号隔开
+theme: 皮肤样式
+highlightStyle: 代码高亮样式，默认monokai_sublime
+usemathjax: yes 启用MathJax渲染公式
+</code></pre>
 <h2 id="单页配置语法"><a href="#单页配置语法" class="headerlink" title="单页配置语法"></a>单页配置语法</h2><p>通过<code>[slide]</code>作为PPT分隔</p>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><pre><code>[slide style=&quot;background-image:url(&#39;/img/bg1.png&#39;)&quot;]
 </code></pre><h3 id="单页动画"><a href="#单页动画" class="headerlink" title="单页动画"></a>单页动画</h3><p>主要有以下模式：kontext，vkontext，circle，earthquake，cards，glue，stick，move，newspaper，slide，slide2，slide3，horizontal3d，horizontal，vertical3d，zoomin，zoomout，pulse等</p>
 <pre><code>[slide data-transition=&quot;vertical3d&quot;]
-</code></pre><h3 id="转场回调"><a href="#转场回调" class="headerlink" title="转场回调"></a>转场回调</h3><pre class="line-numbers language-html"><code class="language-html">[slide data-on-leave="outcallback" data-on-enter="incallback"]
+</code></pre><h3 id="转场回调"><a href="#转场回调" class="headerlink" title="转场回调"></a>转场回调</h3><pre><code class="html">[slide data-on-leave=&quot;outcallback&quot; data-on-enter=&quot;incallback&quot;]
 ## 当进入此页，就执行incallback函数
 ## 当离开此页面，就执行outcallback函数
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="页面内配置语法"><a href="#页面内配置语法" class="headerlink" title="页面内配置语法"></a>页面内配置语法</h2><h3 id="单条动画"><a href="#单条动画" class="headerlink" title="单条动画"></a>单条动画</h3><p>使用方法：列表第一条加上<code>{:&amp;.动画类型}</code>（注意空格），下面是示例代码，其他动画类型包括moveIn，fadeIn，bounceIn，rollIn，zoomIn：  </p>
-<pre class="line-numbers language-html"><code class="language-html">* 上下左右方向键翻页
+<pre><code class="html">* 上下左右方向键翻页
     * 列表支持渐显动画 {:&amp;.moveIn}
     * 支持多级列表
     * 这个动画是moveIn
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="页面内上下布局"><a href="#页面内上下布局" class="headerlink" title="页面内上下布局"></a>页面内上下布局</h3><pre class="line-numbers language-html"><code class="language-html">[slide]
+</code></pre>
+<h3 id="页面内上下布局"><a href="#页面内上下布局" class="headerlink" title="页面内上下布局"></a>页面内上下布局</h3><pre><code class="html">[slide]
 ## 主页面样式
 ### ----是上下分界线
 ----
 nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT
 nodeppt：https://github.com/ksky521/nodeppt
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="页面内表格"><a href="#页面内表格" class="headerlink" title="页面内表格"></a>页面内表格</h3><pre class="line-numbers language-html"><code class="language-html">### 市面上主要的css预处理器：less\sass\stylus
+</code></pre>
+<h3 id="页面内表格"><a href="#页面内表格" class="headerlink" title="页面内表格"></a>页面内表格</h3><pre><code class="html">### 市面上主要的css预处理器：less\sass\stylus
 ---
  |less| sass | stylus
 :-------|:------:|-------:|--------
@@ -628,7 +635,7 @@ nodeppt：https://github.com/ksky521/nodeppt
 扩展名 | .less | .sass/.scss | .styl
 特点 | 老牌，用户多，支持js解析 | 功能全，有成型框架，发展快 | 语法多样，小众
 案例/框架 | [Bootstrap](http://getbootstrap.com/) | [compass](http://compass-style.org) [bourbon](http://bourbon.io) |
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="转场效果"><a href="#转场效果" class="headerlink" title="转场效果"></a>转场效果</h3><p><code>magic</code>标签，转场效果有zoomin/zoomout,move,circle,earthquake,newspaper,cover-diamond,horizontal3d/horizontal,vertical3d,cover-circle等  </p>
 <pre><code>[slide]
 [magic data-transition=&quot;效果&quot;]
@@ -838,7 +845,7 @@ new code
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
@@ -856,7 +863,7 @@ new code
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
@@ -910,7 +917,7 @@ new code
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">19</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
@@ -1060,7 +1067,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import JS File -->
-<script>lsloader.load("personalize_js","/js/personalize.js?O6npzXqci33wBckVx/uJWg==", true)</script>
 
     <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
 
@@ -1122,6 +1128,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/prettify.min.js", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1132,6 +1144,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

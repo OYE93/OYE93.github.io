@@ -104,6 +104,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify/tranquil-heart.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -324,8 +329,10 @@
         
     
 
-    <!-- top scroll bar -->
-    <style type="text/css">
+    <!-- Top Scroll Bar -->
+    
+        <!-- top scroll bar -->
+<style type="text/css">
     .top-scroll-bar {
     position: fixed;
     top: 0;
@@ -333,21 +340,21 @@
     z-index: 9999;
     display: none;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #6d6d6d;
     }
-    </style>
-    <div class="top-scroll-bar"></div>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      $(window).scroll(function(){
-        $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
-      });
-    });
-    </script>
+</style>
+<div class="top-scroll-bar">
+<script type="text/javascript">
+$(document).ready(function () {
+  $(window).scroll(function(){
+    $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+  });
+});
+</script></div>
+    
 
-<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
     
@@ -551,8 +558,8 @@
 <p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/excel_int2string_1.JPG?post_80" alt title="figure 1"><br><img src="https://oyeblog-1258451837.file.myqcloud.com/post/excel_int2string_2.JPG?post_80" alt title="figure 2"><br><img src="https://oyeblog-1258451837.file.myqcloud.com/post/excel_int2string_3.JPG?post_80" alt title="figure 3"><br><img src="https://oyeblog-1258451837.file.myqcloud.com/post/excel_int2string_4.JPG?post_80" alt title="figure 4"></p>
 <p>参考：<a href="https://wenku.baidu.com/view/7ebc09fdf78a6529657d5338.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/7ebc09fdf78a6529657d5338.html</a></p>
 <h2 id="日期格式转特定文本格式"><a href="#日期格式转特定文本格式" class="headerlink" title="日期格式转特定文本格式"></a>日期格式转特定文本格式</h2><p>如下图，需要将左侧的日期格式转换成右边连写的文本格式，可以利用公式：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">=</span>text<span class="token punctuation">(</span>A2<span class="token punctuation">,</span><span class="token string">"yyyymmdd"</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code class="python">=text(A2,&quot;yyyymmdd&quot;)
+</code></pre>
 <p>其中<code>yyyymmdd</code>是需要定义的日期文本格式，也可以加入时、分、秒等信息，比如<code>yyyymmddhhmmss</code>就会生成“20171020141212”这样的文本，<code>yyyymmdd hh:mm:ss</code>就会生成“20171020 14:12:12”这样。<br>在转成文本格式之后，可能还会在文本末尾加上后缀等等，用<code>&amp;</code>将后缀加在文本后就可以了，比如<code>=text(A2,&quot;yyyymmdd&quot;)&amp;&quot;001&quot;</code>就是在日期后加上<code>001</code>。</p>
 <p><img src="https://oyeblog-1258451837.file.myqcloud.com/post/excel_5.jpg" alt></p>
 <p>参考：<a href="http://blog.sina.com.cn/s/blog_598ae3e30100a4jw.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_598ae3e30100a4jw.html</a></p>
@@ -720,7 +727,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
@@ -738,7 +745,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
@@ -792,7 +799,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">19</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
@@ -942,7 +949,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import JS File -->
-<script>lsloader.load("personalize_js","/js/personalize.js?O6npzXqci33wBckVx/uJWg==", true)</script>
 
     <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
 
@@ -1004,6 +1010,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/prettify.min.js", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1014,6 +1026,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

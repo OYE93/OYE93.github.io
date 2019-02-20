@@ -104,6 +104,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify/tranquil-heart.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -324,8 +329,10 @@
         
     
 
-    <!-- top scroll bar -->
-    <style type="text/css">
+    <!-- Top Scroll Bar -->
+    
+        <!-- top scroll bar -->
+<style type="text/css">
     .top-scroll-bar {
     position: fixed;
     top: 0;
@@ -333,21 +340,21 @@
     z-index: 9999;
     display: none;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #6d6d6d;
     }
-    </style>
-    <div class="top-scroll-bar"></div>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      $(window).scroll(function(){
-        $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
-      });
-    });
-    </script>
+</style>
+<div class="top-scroll-bar">
+<script type="text/javascript">
+$(document).ready(function () {
+  $(window).scroll(function(){
+    $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+  });
+});
+</script></div>
+    
 
-<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
     
@@ -548,37 +555,37 @@
     
         <p>最近已经在找工作了，发现各个公司对代码能力要求还是比较高的，谁叫咱还是要干码农的活呢，所以决心改一改自己的代码习惯，写出漂亮的代码。虽说重要的是实现功能，但是代码看起来漂亮，也会让人更舒服吧。下面会记录一些自己以前不太注意到的地方，主要准则还是“有则改之，无则加勉”。主要分成风格规范和语言规范两类。这篇是讲风格规范。<br><a id="more"></a><br>主要的参考是<a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="noopener">Google Python Style Guide</a>。</p>
 <h3 id="最长行"><a href="#最长行" class="headerlink" title="最长行"></a>最长行</h3><p>最大行长度不超过80个字符，很长的导入语句或者注释里的URL除外。<br>如果一个文本串的长度超过了80，可以以括号的形式来隐性连接两段短文本，如下：  </p>
-<pre class="line-numbers language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'This will build a very long long long long long '</span>
-    <span class="token string">'long long long long long long string'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code class="python">x = (&#39;This will build a very long long long long long &#39;
+    &#39;long long long long long long string&#39;)
+</code></pre>
 <h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><p>用 <em>4个空格</em> 作为缩进符<br>当字符数大于80了，可以有两种缩进方式选择，一种是超过80的部分，以固定缩进长度表示；第二种是以4个空格作为缩进，但是这种情况下，第一行就不能有任何内容，具体例子如下：  </p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 固定缩进长度</span>
-foo <span class="token operator">=</span> long_function_name<span class="token punctuation">(</span>var_one<span class="token punctuation">,</span> var_two<span class="token punctuation">,</span>
-                var_three<span class="token punctuation">,</span> var_four<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 在字典中固定缩进长度</span>
-foo <span class="token operator">=</span> <span class="token punctuation">{</span>
-    long_dictionary_key<span class="token punctuation">:</span> value1 <span class="token operator">+</span> 
-                value2<span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
+<pre><code class="python"># 固定缩进长度
+foo = long_function_name(var_one, var_two,
+                var_three, var_four)
+# 在字典中固定缩进长度
+foo = {
+    long_dictionary_key: value1 + 
+                value2,
+    ...
+}
 
-<span class="token comment" spellcheck="true"># 4个空格缩进，第一行没有任何东西</span>
-foo <span class="token operator">=</span> long_function_name<span class="token punctuation">(</span>
-    var_one<span class="token punctuation">,</span> var_two<span class="token punctuation">,</span> var_three<span class="token punctuation">,</span>
-    var_four<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 在字典中以4个空格缩进</span>
-foo <span class="token operator">=</span> <span class="token punctuation">{</span>
-    long_dictionary_key<span class="token punctuation">:</span>
-        value1 <span class="token operator">+</span> value2<span class="token punctuation">,</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span>
+# 4个空格缩进，第一行没有任何东西
+foo = long_function_name(
+    var_one, var_two, var_three,
+    var_four)
+# 在字典中以4个空格缩进
+foo = {
+    long_dictionary_key:
+        value1 + value2,
+    ...
+}
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><p>高级定义（函数或者类）之间空两行，方法定义之间，以及<code>class</code>定义行和第一个方法定义行之间空一行。</p>
 <h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>根据印刷标准的要求，来使用标点周围的空格。<br>当’=’出现在表示关键值或者默认参数值时，周围不需要加空格，如下：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">complex</span><span class="token punctuation">(</span>real<span class="token punctuation">,</span> imag<span class="token operator">=</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token keyword">return</span> magic<span class="token punctuation">(</span>r<span class="token operator">=</span>real<span class="token punctuation">,</span> i<span class="token operator">=</span>imag<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code class="python">def complex(real, imag=0.0): 
+    return magic(r=real, i=imag)
+</code></pre>
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>对于函数、方法的注释，应该使用文档字符串，当然假如函数非常短小，简单明了，就不必要注释了。下面会有具体的例子。</p>
 <blockquote>
 <p>文档字符串是包、模块、类或函数里的第一个语句。这些字符串可以通过对象的__doc__成员被自动提取，并且被pydoc所用。(你可以在你的模块上运行pydoc试一把, 看看它长什么样)。我们对文档字符串的惯例是使用三重双引号”””( PEP-257 )。一个文档字符串应该这样组织：首先是一行以句号，问号或惊叹号结尾的概述(或者该文档字符串单纯只有一行)。接着是一个空行。接着是文档字符串剩下的部分，它应该与文档字符串的第一行的第一个引号对齐。</p>
@@ -589,8 +596,8 @@ foo <span class="token operator">=</span> <span class="token punctuation">{</spa
 <li>Returns: 描述返回值的类型和语义</li>
 <li>Raises: 列出与接口有关的所有异常</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fetch_bigtable_rows</span><span class="token punctuation">(</span>big_table<span class="token punctuation">,</span> keys<span class="token punctuation">,</span> other_silly_variable<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""Fetches rows from a Bigtable.
+<pre><code class="python">def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
+    &quot;&quot;&quot;Fetches rows from a Bigtable.
 
     Retrieves rows pertaining to the given keys from the Table instance
     represented by big_table.  Silly things may happen if
@@ -608,21 +615,21 @@ foo <span class="token operator">=</span> <span class="token punctuation">{</spa
         fetched. Each row is represented as a tuple of strings. For
         example:
 
-        {'Serak': ('Rigel VII', 'Preparer'),
-         'Zim': ('Irk', 'Invader'),
-         'Lrrr': ('Omicron Persei 8', 'Emperor')}
+        {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
+         &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
+         &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
 
         If a key from the keys argument is missing from the dictionary,
         then that row was not found in the table.
 
     Raises:
         IOError: An error occurred accessing the bigtable.Table object.
-    """</span>
-    <span class="token keyword">pass</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    &quot;&quot;&quot;
+    pass
+</code></pre>
 <p>对于类的注释，也应该有一个用于描述该类的文档字符串。而且如果你的类有公共属性(Attributes)，那么文档中应该有一个属性(Attributes)段。并且应该遵守和函数参数相同的格式。具体例子如下：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">SampleClass</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""Summary of class here.
+<pre><code class="python">class SampleClass(object):
+    &quot;&quot;&quot;Summary of class here.
 
     Longer class information....
     Longer class information....
@@ -630,36 +637,36 @@ foo <span class="token operator">=</span> <span class="token punctuation">{</spa
     Attributes:
         likes_spam: A boolean indicating if we like SPAM or not.
         eggs: An integer count of the eggs we have laid.
-    """</span>
+    &quot;&quot;&quot;
 
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> likes_spam<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""Inits SampleClass with blah."""</span>
-        self<span class="token punctuation">.</span>likes_spam <span class="token operator">=</span> likes_spam
-        self<span class="token punctuation">.</span>eggs <span class="token operator">=</span> <span class="token number">0</span>
+    def __init__(self, likes_spam=False):
+        &quot;&quot;&quot;Inits SampleClass with blah.&quot;&quot;&quot;
+        self.likes_spam = likes_spam
+        self.eggs = 0
 
-    <span class="token keyword">def</span> <span class="token function">public_method</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""Performs operation blah."""</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    def public_method(self):
+        &quot;&quot;&quot;Performs operation blah.&quot;&quot;&quot;
+</code></pre>
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>即使在参数都是字符串的情况下，也应该使用<code>format</code>或者<code>%</code>方法来格式化字符串。但是还是要在<code>+</code>和<code>format</code>（或者<code>%</code>）判断性的选择。<strong>从下面的例子中，是不是说，假如只是两个字符串组合，就直接使用<code>+</code>，而假如是字符串潜入到别的内容中，就最好使用<code>format</code>或者<code>%</code></strong></p>
-<pre class="line-numbers language-python"><code class="language-python">x <span class="token operator">=</span> a <span class="token operator">+</span> b
-x <span class="token operator">=</span> <span class="token string">'%s, %s!'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>imperative<span class="token punctuation">,</span> expletive<span class="token punctuation">)</span>
-x <span class="token operator">=</span> <span class="token string">'{}, {}!'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>imperative<span class="token punctuation">,</span> expletive<span class="token punctuation">)</span>
-x <span class="token operator">=</span> <span class="token string">'name: %s; score: %d'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
-x <span class="token operator">=</span> <span class="token string">'name: {}; score: {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>name<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">x = a + b
+x = &#39;%s, %s!&#39; % (imperative, expletive)
+x = &#39;{}, {}!&#39;.format(imperative, expletive)
+x = &#39;name: %s; score: %d&#39; % (name, n)
+x = &#39;name: {}; score: {}&#39;.format(name, n)
+</code></pre>
 <p>在循环里不要使用<code>+</code>或者<code>+=</code>的形式来累加字符串。尽管字符串是不变的，但是这样会生成很多不必要的临时对象和结果，进而会造成运行时间平方次的增长，而不是线性增长。因此把自字符串先加到一个<code>list</code>里，然后在循环结束后<code>join</code>起来是更好的选择。</p>
-<pre class="line-numbers language-python"><code class="language-python">items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'&lt;table>'</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> last_name<span class="token punctuation">,</span> first_name <span class="token keyword">in</span> employee_list<span class="token punctuation">:</span>
-    items<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'&lt;tr>&lt;td>%s, %s&lt;/td>&lt;/tr>'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>last_name<span class="token punctuation">,</span> first_name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-items<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'&lt;/table>'</span><span class="token punctuation">)</span>
-employee_table <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>items<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">items = [&#39;&lt;table&gt;&#39;]
+for last_name, first_name in employee_list:
+    items.append(&#39;&lt;tr&gt;&lt;td&gt;%s, %s&lt;/td&gt;&lt;/tr&gt;&#39; % (last_name, first_name))
+items.append(&#39;&lt;/table&gt;&#39;)
+employee_table = &#39;&#39;.join(items)
+</code></pre>
 <p>其他小规范：在同一个文件中使用统一的字符串引号；使用<code>&quot;&quot;&quot;</code>来表示多行字符串。</p>
 <h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>在使用完文件之后，要关闭文件，推荐使用<code>with</code>的方式打开文件，因为这样会自动关闭文件。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> hello_file<span class="token punctuation">:</span>
-    <span class="token keyword">for</span> line <span class="token keyword">in</span> hello_file<span class="token punctuation">:</span>
-        <span class="token keyword">print</span> line
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">with open(&quot;hello.txt&quot;) as hello_file:
+    for line in hello_file:
+        print line
+</code></pre>
 <h3 id="导入格式"><a href="#导入格式" class="headerlink" title="导入格式"></a>导入格式</h3><p>每一行只导入一个模块，模块导入顺序如下：</p>
 <ol>
 <li>标准库导入</li>
@@ -667,12 +674,12 @@ employee_table <span class="token operator">=</span> <span class="token string">
 <li>程序指定导入</li>
 </ol>
 <p>在同一个组中，又要按字母顺序导入，且忽略大小写</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> foo
-<span class="token keyword">from</span> foo <span class="token keyword">import</span> bar
-<span class="token keyword">from</span> foo<span class="token punctuation">.</span>bar <span class="token keyword">import</span> baz
-<span class="token keyword">from</span> foo<span class="token punctuation">.</span>bar <span class="token keyword">import</span> Quux
-<span class="token keyword">from</span> Foob <span class="token keyword">import</span> ar
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">import foo
+from foo import bar
+from foo.bar import baz
+from foo.bar import Quux
+from Foob import ar
+</code></pre>
 <h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>命名约定：</p>
 <blockquote>
 <ul>
@@ -914,7 +921,7 @@ employee_table <span class="token operator">=</span> <span class="token string">
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
@@ -932,7 +939,7 @@ employee_table <span class="token operator">=</span> <span class="token string">
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
@@ -986,7 +993,7 @@ employee_table <span class="token operator">=</span> <span class="token string">
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">19</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
@@ -1136,7 +1143,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import JS File -->
-<script>lsloader.load("personalize_js","/js/personalize.js?O6npzXqci33wBckVx/uJWg==", true)</script>
 
     <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
 
@@ -1198,6 +1204,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/prettify.min.js", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1208,6 +1220,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

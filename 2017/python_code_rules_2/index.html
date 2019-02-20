@@ -104,6 +104,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/css/prettify/tranquil-heart.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -324,8 +329,10 @@
         
     
 
-    <!-- top scroll bar -->
-    <style type="text/css">
+    <!-- Top Scroll Bar -->
+    
+        <!-- top scroll bar -->
+<style type="text/css">
     .top-scroll-bar {
     position: fixed;
     top: 0;
@@ -333,21 +340,21 @@
     z-index: 9999;
     display: none;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: #6d6d6d;
     }
-    </style>
-    <div class="top-scroll-bar"></div>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      $(window).scroll(function(){
-        $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
-      });
-    });
-    </script>
+</style>
+<div class="top-scroll-bar">
+<script type="text/javascript">
+$(document).ready(function () {
+  $(window).scroll(function(){
+    $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+  });
+});
+</script></div>
+    
 
-<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 
     
@@ -549,77 +556,77 @@
         <p>本篇接上一篇：<a href="http://oyeblog.com/2017/python_code_rules_1/">不被注意的Python代码规范(1)—风格规范</a>，主要介绍Pythn代码的语言规范。<br><a id="more"></a><br>主要的参考是<a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="noopener">Google Python Style Guide</a>。</p>
 <h3 id="Pylint"><a href="#Pylint" class="headerlink" title="Pylint"></a>Pylint</h3><p>Pylint是一个代码检查工具，用来发现代码bug和不符合规范的地方，默认代码风格是PEP 8。但是目前流行的IDE，如eclipse，pycharm都包含了代码检查功能。</p>
 <h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>在代码中通过包的全名来import每个模块，比如：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 用全名引用.</span>
-<span class="token keyword">import</span> sound<span class="token punctuation">.</span>effects<span class="token punctuation">.</span>echo
+<pre><code class="python"># 用全名引用.
+import sound.effects.echo
 
-<span class="token comment" spellcheck="true"># 只用模块名引用 (推荐).</span>
-<span class="token keyword">from</span> sound<span class="token punctuation">.</span>effects <span class="token keyword">import</span> echo
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 只用模块名引用 (推荐).
+from sound.effects import echo
+</code></pre>
 <h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>异常处理是被允许的，但是使用的时候要注意。<br>其实之前都没注意过这方面的细节，就会用一个try…except…，上具体代码学习学习：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 正常操作</span>
-    <span class="token keyword">pass</span>
-<span class="token keyword">except</span> Exception<span class="token punctuation">,</span> expression<span class="token punctuation">:</span> 
-    <span class="token comment" spellcheck="true"># 可以有多种异常，满足一个就执行异常代码，代码：except(Exception1[, Exception2[, ...]])</span>
-    <span class="token keyword">print</span> expression    <span class="token comment" spellcheck="true"># 获得expression作为错误的具体表述</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 如果没有异常发生</span>
-<span class="token keyword">finally</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 不管有没有异常发生，都会执行</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">try:
+    # 正常操作
+    pass
+except Exception, expression: 
+    # 可以有多种异常，满足一个就执行异常代码，代码：except(Exception1[, Exception2[, ...]])
+    print expression    # 获得expression作为错误的具体表述
+else:
+    # 如果没有异常发生
+finally:
+    # 不管有没有异常发生，都会执行
+</code></pre>
 <p>还有几个点需要注意的：</p>
 <ul>
 <li>异常的识别比较敏感，会把各种基本异常都识别到，所以尽量指定异常名。</li>
 <li>尽量减少try后面的代码操作，代码越多，异常可能也越多，而让我们catch不到我们关心的异常。</li>
 </ul>
 <h3 id="Lambda函数"><a href="#Lambda函数" class="headerlink" title="Lambda函数"></a>Lambda函数</h3><p>Lambda函数定义的是匿名函数，经常和map()、filter()函数连用。主要好处是可以减少定义那些只用到一次的函数。但是不需要用来代替某些内置函数，比如乘法之类的，又来一波实践代码：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'far'</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> map<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 取list中所有词的大写</span>
-<span class="token punctuation">[</span><span class="token string">'FOO'</span><span class="token punctuation">,</span> <span class="token string">'BAR'</span><span class="token punctuation">,</span> <span class="token string">'FAR'</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> filter<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token string">'f'</span> <span class="token keyword">in</span> x<span class="token punctuation">,</span> l<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 筛选list中含有'f'的词</span>
-<span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token string">'far'</span><span class="token punctuation">]</span>
-<span class="token operator">>></span><span class="token operator">></span> reduce<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token operator">*</span>y<span class="token punctuation">,</span> xrange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># xrange与range的区别是xrange得到的是一个生成器，reduce函数与map函数差不多，是一个反复调用的功能。</span>
-<span class="token number">24</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">&gt;&gt;&gt; l = [&#39;foo&#39;, &#39;bar&#39;, &#39;far&#39;]
+&gt;&gt;&gt; map(lambda x: x.upper(), l)  # 取list中所有词的大写
+[&#39;FOO&#39;, &#39;BAR&#39;, &#39;FAR&#39;]
+&gt;&gt;&gt; filter(lambda x: &#39;f&#39; in x, l)  # 筛选list中含有&#39;f&#39;的词
+[&#39;foo&#39;, &#39;far&#39;]
+&gt;&gt;&gt; reduce(lambda x, y: x*y, xrange(1,5)) # xrange与range的区别是xrange得到的是一个生成器，reduce函数与map函数差不多，是一个反复调用的功能。
+24
+</code></pre>
 <h3 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h3><p>本来对装饰器一无所知，之前还和同事讨论过装饰器的一些用法之类的，大致了解了。感觉它的主要目的是提取函数中与本身功能无关的一些代码，进而达到代码重用的目的。我主要是参考<a href="http://python.jobbole.com/82344/" target="_blank" rel="noopener">http://python.jobbole.com/82344/</a>这篇博客，循序渐进地描述了把一个计时功能逐渐转成装饰器的过程，从实现最基本功能，到函数加入参数，再到装饰器加入参数，比较容易理解，很推荐。我把代码重写一遍，加深一下理解。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf8</span>
-<span class="token keyword">import</span> time
-<span class="token keyword">def</span> <span class="token function">time_count</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    s_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    func<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    e_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    time_c <span class="token operator">=</span> e_time <span class="token operator">-</span> s_time
-    <span class="token keyword">print</span> <span class="token string">'elapsed time: {} s.'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>time_c<span class="token punctuation">)</span>
+<pre><code class="python"># coding:utf8
+import time
+def time_count(func):
+    s_time = time.time()
+    func()
+    e_time = time.time()
+    time_c = e_time - s_time
+    print &#39;elapsed time: {} s.&#39;.format(time_c)
 
-<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token string">'strat'</span>
-    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token string">'end'</span>
+def func():
+    print &#39;strat&#39;
+    time.sleep(0.5)
+    print &#39;end&#39;
 
-time_count<span class="token punctuation">(</span>func<span class="token punctuation">)</span>  
+time_count(func)  
 
-<span class="token comment" spellcheck="true"># 以上代码是实现func函数的运行时间计算，但是所有的func函数都要以time_count(func)来运行了。</span>
+# 以上代码是实现func函数的运行时间计算，但是所有的func函数都要以time_count(func)来运行了。
 
-<span class="token comment" spellcheck="true"># 以下是用装饰器重写</span>
+# 以下是用装饰器重写
 
-<span class="token keyword">import</span> time
-<span class="token keyword">def</span> <span class="token function">time_count</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        s_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        func<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        e_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        time_c <span class="token operator">=</span> e_time <span class="token operator">-</span> s_time
-        <span class="token keyword">print</span> <span class="token string">'elapsed time: {} s.'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>time_c<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> wrapper
+import time
+def time_count(func):
+    def wrapper():
+        s_time = time.time()
+        func()
+        e_time = time.time()
+        time_c = e_time - s_time
+        print &#39;elapsed time: {} s.&#39;.format(time_c)
+    return wrapper
 
 @time_count
-<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token string">'strat'</span>
-    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token string">'end'</span>
+def func():
+    print &#39;strat&#39;
+    time.sleep(0.5)
+    print &#39;end&#39;
 
-func<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+func()
+</code></pre>
 <p>至此，对于Python的代码规范大致总结了一些我个人之前忽略了的方面，也希望之后在coding的过程中进一步应用，写出漂亮的代码。</p>
 
         
@@ -785,7 +792,7 @@ func<span class="token punctuation">(</span><span class="token punctuation">)</s
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">4</span></a>
             </li></ul>
         </li>
         
@@ -803,7 +810,7 @@ func<span class="token punctuation">(</span><span class="token punctuation">)</s
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/分享境/">分享境<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/技术向/">技术向<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/文献库/">文献库<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/自言语/">自言语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/诸家堂/">诸家堂<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
@@ -857,7 +864,7 @@ func<span class="token punctuation">(</span><span class="token punctuation">)</s
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">19</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
@@ -1007,7 +1014,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import JS File -->
-<script>lsloader.load("personalize_js","/js/personalize.js?O6npzXqci33wBckVx/uJWg==", true)</script>
 
     <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/lazyload.min.js", true)</script>
 
@@ -1069,6 +1075,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/npm/hexo-material@1.5.0/source/js/prettify.min.js", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1079,6 +1091,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>
