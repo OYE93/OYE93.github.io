@@ -8,8 +8,8 @@
         <category>分享境</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -57,9 +57,9 @@
       <tags>
         <tag>NLP</tag>
         <tag>Deep Learning</tag>
+        <tag>Paper</tag>
         <tag>Relation Classification</tag>
         <tag>Reinforcement Learning</tag>
-        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -72,8 +72,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Deep Learning</tag>
-        <tag>Paper</tag>
         <tag>Embedding</tag>
+        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -128,13 +128,13 @@
   <entry>
     <title><![CDATA[Blog 折腾记]]></title>
     <url>%2F2017%2Fhexo_blog_personalize%2F</url>
-    <content type="text"><![CDATA[本着不折腾不舒服的精神，对博客进行个性化，丰富功能。 修改不蒜子统计Material 主题的PV和UV统计用的也是不蒜子，但是显示的位置在分享里，太隐蔽了。于是乎，我就想把统计信息显示在footer里，然后参照网上教程，修改了layout/_partial/footer.ejs，如下： &lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt; &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt; 增加每日一图每日一图的功能是我在搜索Material主题的博客时，偶然发现的一个隐藏属性，具体可以参见这里，因为我发现这个作者给的API比较慢，于是就搜了一下有没有比较快的API，结果还真有，就是这个，这个API返回的是Bing的图片，图片质量很有保证，而且作者有很多参数可以设置，我选择了分辨率为800*480，这样加载速度更快，十分满意，具体修改layout/_partial/daily_pic.ejs，如下： &lt;div class=&quot;mdl-card__media mdl-color-text--grey-50&quot; style=&quot;background-image:url(https://bing.ioliu.cn/v1/rand/?w=800&amp;h=480)&quot;&gt; 其中w是设置宽度，h是设置高度，具体的参数设置可以参考github页面。总之，给这个API的作者点个赞，哈哈。 增加版权信息为每篇文章增加版权信息，其实也没人会来转载我的文章，但是就是想尽可能完善一下自己的博客嘛。我参考的是这位仁兄的方法，结合了一些别的博客看到的版权声明。具体我是修改layout/_partial/post-content.ejs，如下： &lt;% if(!page.nostatement){ %&gt; &lt;div class=&quot;article-statement&quot;&gt; &lt;hr&gt; &lt;strong&gt;本文标题: &lt;/strong&gt;&lt;a href=&quot;&lt;%- url_for(page.path) %&gt;&quot;&gt;&lt;%= page.title %&gt;&lt;/a&gt;&lt;br&gt; &lt;strong&gt;原始链接: &lt;/strong&gt;&lt;a href=&quot;&lt;%- url_for(page.path) %&gt;&quot; title=&quot;&lt;%= page.title %&gt;&quot;&gt;&lt;%= page.permalink %&gt;&lt;/a&gt;&lt;br&gt; &lt;strong&gt;发布时间: &lt;/strong&gt;&lt;%= page.date.format(&quot;YYYY年MM月DD日-HH:mm&quot;) %&gt;&lt;br&gt; &lt;% if(page.updated){ %&gt; &lt;strong&gt;最后更新: &lt;/strong&gt;&lt;%= page.updated.format(&quot;YYYY年MM月DD日-HH:mm&quot;) %&gt;&lt;/p&gt; &lt;% } %&gt; &lt;strong&gt;版权声明: &lt;/strong&gt;本站文章均采用&lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;&gt;CC BY-NC-SA 4.0协议&lt;/a&gt;进行许可。转载请注明出处！&lt;br&gt; &lt;/div&gt; &lt;% } %&gt; 这里增加了nostatement参数，主要是考虑到About页面并不需要版权信息，加了这个参数可以自由控制版权信息的添加。 增加代码高亮在增加了上面这些代码以后，发现Material主题的代码渲染不是很好看，于是去查了作者的说明文档，发现可以安装插件Hexo-Prism-Plugin，我按照github页面安装配置。 npm i -S hexo-prism-plugin prism_plugin: mode: preprocess # realtime/preprocess theme: solarizedlight line_number: true # default false 还是不能渲染，最后参照这篇博客，发现是我的theme写错了，所以不能高亮，然后我把所有的theme都试了一遍，最后选择了solarizedlight，显示效果在上面。主要theme有如下几种： default coy dark funky okaidia solarizedlight tomorrow twilight 在.md文件中插入代码块的语法如下，其中language可以包括绝大部分编程语言，具体参考官方文档 ```language 代码块 ``` 2019年2月20日更新由于Material主题更新，已经支持新的渲染工具，并且效果还不错，因此放弃prism插件，改用主题自带的prettify 首先卸载hexo-prism-pluginnpm uninstall -S hexo-prism-plugin 修改_config.yml，设置prettify的enable为trueprettify: enable: true theme: &quot;tranquil-heart&quot; 重新generate，deploy即可 About页面增加背景音乐 毋庸置疑，好的事情总会到来。而当它来晚时，也不失为一种惊喜。 ——— 《托斯卡纳艳阳下》 这个是心血来潮的想法，之前听过《Almost Lover》，主要是配合女神汤唯和廖凡演的《命中注定》电影原声MV，简直不能更唯美心碎，真的推荐这个MV，刚刚我又循环了10遍。是的，刚刚也把电影刷了一遍。于是想把 它加过来做背景音乐，然后加在了About me页面，方法其实很简单。在网易云音乐上搜索歌名，选择生成外链播放器。得到的外链代码大致如下： &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=22423722&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt; 然后在.md文件中插入这段代码就可以生成播放器，具体效果可以参考About me页面。 更换评论系统为gitment在升级了Material 1.5之后，发现评论系统disqus_click选项会根据网络环境自动加载，这就失去了click的意义了，然后发现1.5版本的主题开始支持其他的评论系统，比如gitment，也就是我后面要换成的评论系统。选择这个有以下几个考虑： 玩博客的人肯定用github，保证了适用性。 配置比较方便，下面我会说具体过程。 可以不用科学上网就可以访问。 下面是具体配置过程，因为我是在Material主题的基础上配置，所以有些步骤直接省掉了，其他主题的可以参看作者的说明文档，挺详细的，点个赞！ 点击链接，注册OAuth application 得到一个 client ID 和一个 client secret，这个将被用于之后的配置。 修改theme里的config文件，如下： 配置完成之后，点击登录按钮，然后会出现初始化按钮，点击之后会在上面新建的repo的issue里建立一个新的issue，然后就可以评论了。 这个作者的这个评论系统做的挺好的，支持代码高亮什么的，可以再研究研究。 我会继续折腾，本页面也将持续更新。]]></content>
+    <content type="text"><![CDATA[本着不折腾不舒服的精神，对博客进行个性化，丰富功能。 修改不蒜子统计Material 主题的PV和UV统计用的也是不蒜子，但是显示的位置在分享里，太隐蔽了。于是乎，我就想把统计信息显示在footer里，然后参照网上教程，修改了layout/_partial/footer.ejs，如下： &lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt; &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt; 增加每日一图每日一图的功能是我在搜索Material主题的博客时，偶然发现的一个隐藏属性，具体可以参见这里，因为我发现这个作者给的API比较慢，于是就搜了一下有没有比较快的API，结果还真有，就是这个，这个API返回的是Bing的图片，图片质量很有保证，而且作者有很多参数可以设置，我选择了分辨率为800*480，这样加载速度更快，十分满意，具体修改layout/_partial/daily_pic.ejs，如下： &lt;div class=&quot;mdl-card__media mdl-color-text--grey-50&quot; style=&quot;background-image:url(https://bing.ioliu.cn/v1/rand/?w=800&amp;h=480)&quot;&gt; 其中w是设置宽度，h是设置高度，具体的参数设置可以参考github页面。总之，给这个API的作者点个赞，哈哈。 增加版权信息为每篇文章增加版权信息，其实也没人会来转载我的文章，但是就是想尽可能完善一下自己的博客嘛。我参考的是这位仁兄的方法，结合了一些别的博客看到的版权声明。具体我是修改layout/_partial/post-content.ejs，如下： &lt;% if(!page.nostatement){ %&gt; &lt;div class=&quot;article-statement&quot;&gt; &lt;hr&gt; &lt;strong&gt;本文标题: &lt;/strong&gt;&lt;a href=&quot;&lt;%- url_for(page.path) %&gt;&quot;&gt;&lt;%= page.title %&gt;&lt;/a&gt;&lt;br&gt; &lt;strong&gt;原始链接: &lt;/strong&gt;&lt;a href=&quot;&lt;%- url_for(page.path) %&gt;&quot; title=&quot;&lt;%= page.title %&gt;&quot;&gt;&lt;%= page.permalink %&gt;&lt;/a&gt;&lt;br&gt; &lt;strong&gt;发布时间: &lt;/strong&gt;&lt;%= page.date.format(&quot;YYYY年MM月DD日-HH:mm&quot;) %&gt;&lt;br&gt; &lt;% if(page.updated){ %&gt; &lt;strong&gt;最后更新: &lt;/strong&gt;&lt;%= page.updated.format(&quot;YYYY年MM月DD日-HH:mm&quot;) %&gt;&lt;/p&gt; &lt;% } %&gt; &lt;strong&gt;版权声明: &lt;/strong&gt;本站文章均采用&lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;&gt;CC BY-NC-SA 4.0协议&lt;/a&gt;进行许可。转载请注明出处！&lt;br&gt; &lt;/div&gt; &lt;% } %&gt; 这里增加了nostatement参数，主要是考虑到About页面并不需要版权信息，加了这个参数可以自由控制版权信息的添加。 增加代码高亮在增加了上面这些代码以后，发现Material主题的代码渲染不是很好看，于是去查了作者的说明文档，发现可以安装插件Hexo-Prism-Plugin，我按照github页面安装配置。 npm i -S hexo-prism-plugin prism_plugin: mode: preprocess # realtime/preprocess theme: solarizedlight line_number: true # default false 还是不能渲染，最后参照这篇博客，发现是我的theme写错了，所以不能高亮，然后我把所有的theme都试了一遍，最后选择了solarizedlight，显示效果在上面。主要theme有如下几种： default coy dark funky okaidia solarizedlight tomorrow twilight 在.md文件中插入代码块的语法如下，其中language可以包括绝大部分编程语言，具体参考官方文档 ```language 代码块 ``` 2019年2月20日更新由于Material主题更新，已经支持新的渲染工具，并且效果还不错，因此放弃prism插件，改用主题自带的prettify 首先卸载hexo-prism-pluginnpm uninstall -S hexo-prism-plugin 修改_config.yml，设置prettify的enable为trueprettify: enable: true theme: &quot;tranquil-heart&quot; 重新generate，deploy即可 About页面增加背景音乐 毋庸置疑，好的事情总会到来。而当它来晚时，也不失为一种惊喜。 ——— 《托斯卡纳艳阳下》 这个是心血来潮的想法，之前听过《Almost Lover》，主要是配合女神汤唯和廖凡演的《命中注定》电影原声MV，简直不能更唯美心碎，真的推荐这个MV，刚刚我又循环了10遍。是的，刚刚也把电影刷了一遍。于是想把 它加过来做背景音乐，然后加在了About me页面，方法其实很简单。在网易云音乐上搜索歌名，选择生成外链播放器。得到的外链代码大致如下： &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=22423722&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt; 然后在.md文件中插入这段代码就可以生成播放器，具体效果可以参考About me页面。 更换评论系统为gitment在升级了Material 1.5之后，发现评论系统disqus_click选项会根据网络环境自动加载，这就失去了click的意义了，然后发现1.5版本的主题开始支持其他的评论系统，比如gitment，也就是我后面要换成的评论系统。选择这个有以下几个考虑： 玩博客的人肯定用github，保证了适用性。 配置比较方便，下面我会说具体过程。 可以不用科学上网就可以访问。 下面是具体配置过程，因为我是在Material主题的基础上配置，所以有些步骤直接省掉了，其他主题的可以参看作者的说明文档，挺详细的，点个赞！ 点击链接，注册OAuth application 得到一个 client ID 和一个 client secret，这个将被用于之后的配置。 修改theme里的config文件，如下： 配置完成之后，点击登录按钮，然后会出现初始化按钮，点击之后会在上面新建的repo的issue里建立一个新的issue，然后就可以评论了。 这个作者的这个评论系统做的挺好的，支持代码高亮什么的，可以再研究研究。 2019年2月20日更新之前一直没注意，也因为没人评论，才发现gitment出问题，报[object ProgressEvent]的错误，参考这个老哥的解答，貌似是因为原作者的跨域服务接口出问题了，然后出现上述错误，根据他的解决方案，我也调整了我的代码，记录如下：在\layout\_widget\comment\gitment\enter.ejs修改如下代码： &lt;link rel=&quot;stylesheet&quot; href=&quot;https://imsun.github.io/gitment/style/default.css&quot;&gt; &lt;script src=&quot;https://imsun.github.io/gitment/dist/gitment.browser.js&quot;&gt;&lt;/script&gt; 为 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.wenjunjiang.win/css/gitment.css&quot;&gt; &lt;script src=&quot;https://www.wenjunjiang.win/js/gitment.js&quot;&gt;&lt;/script&gt; 重新部署，应该就可以恢复正常了。 我会继续折腾，本页面也将持续更新。]]></content>
       <categories>
         <category>分享境</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -244,9 +244,9 @@
         <category>自言语</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>Life</tag>
         <tag>Jekyll</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
