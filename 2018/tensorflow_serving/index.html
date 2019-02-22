@@ -247,10 +247,10 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://oyeblog.com">
+    <meta property="og:url" content="https://oyeblog.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Tensorflow Serving 填坑记 | Travon&#39;s Blog">
-    <meta property="og:image" content="http://oyeblog.com/img/favicon.png">
+    <meta property="og:image" content="https://oyeblog.com/img/favicon.png">
     <meta property="og:description" content="
 　　之前用TensorFlow写了一个基于Bi-LSTM-CRF的临床命名实体识别模型，最近要求把模型部署API，供其他应用调用。本来打算直接用TensorFlow的Model saver和load配合flask框架实现。查询资料的时候发现TensorFlow官方出品了TensorFlow Serving工具可以实现相同的功能，于是尝试安装Serving，并跑通官方示例。在安装和调试过程中出现了诸多问题，记录一下。">
     <meta property="og:article:tag" content="TensorFlow"> <meta property="og:article:tag" content="Serving"> 
@@ -264,13 +264,13 @@
     <meta name="twitter:title" content="Tensorflow Serving 填坑记 | Travon&#39;s Blog">
     <meta name="twitter:description" content="
 　　之前用TensorFlow写了一个基于Bi-LSTM-CRF的临床命名实体识别模型，最近要求把模型部署API，供其他应用调用。本来打算直接用TensorFlow的Model saver和load配合flask框架实现。查询资料的时候发现TensorFlow官方出品了TensorFlow Serving工具可以实现相同的功能，于是尝试安装Serving，并跑通官方示例。在安装和调试过程中出现了诸多问题，记录一下。">
-    <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
+    <meta name="twitter:image" content="https://oyeblog.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="http://oyeblog.com">
+    <meta name="twitter:url" content="https://oyeblog.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://oyeblog.com/2018/tensorflow_serving/index.html">
+        <link rel="canonical" href="https://oyeblog.com/2018/tensorflow_serving/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -282,7 +282,7 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://oyeblog.com/2018/tensorflow_serving/index.html",
+    "mainEntityOfPage": "https://oyeblog.com/2018/tensorflow_serving/index.html",
     "headline": "Tensorflow Serving 填坑记",
     "datePublished": "Mon Jul 23 2018 20:20:00 GMT+0800",
     "dateModified": "Sun Jan 06 2019 22:18:03 GMT+0800",
@@ -471,7 +471,7 @@ $(document).ready(function () {
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXElEQVR42u3aQXLDIBAEQP//08kDEtszC8JKqjmlbBnRHIDM8vj61+2Bh4eHh4eHh4d3M94jbr90FHz+s4e8t9nY8PDw8M7w3iy18YufPdP2vzQ2PDw8vIO8Z8Ntl/X8t+23yTaDh4eHd2desnDnG0DyXjw8PLy/y8s/ef35TTcGPDw8vK1hxCzwnW0wH8ha8PDw8GJePujzfx+t7+Hh4eEFvLbtvV6QXywoRoiHh4d3MS9fiFv8+lWD4cEdDw8P72JeXshvi/2vB73eW32kxsPDw9vEa4OAvUt5Uk5LinB4eHh4J3l1eWlUAJtFD7OJw8PDwzvDa4teybDyIGN9E8LDw8O7D+/qSwDJJrQha8HDw8O7mJdsBitL+frB/U1veHh4eEd4yTWpPFSdRbGvp6840OPh4eEd4SXdrQxu9nwblODh4eGd5LWXCfKyVjspK9OKh4eHd573iFseKORXAWahcPEfAx4eHt5W3gqjvVY1m8T8OgIeHh7eSV5b7mpj1jaY2HzpCg8PD28Tb7YltANamaz64I6Hh4d3hNduFW2b/TaJM94cqfHw8PCO82b4ZBBthJFHEnh4eHgneSuYJISdFcbqKcDDw8O7mDc75rYbQ7tVtFEIHh4e3knedYX8vIf2aF4fqfHw8PAu4OVxan5obi8ZrJTf8PDw8D7Fyy9F7Qomku1kc9aCh4eH91HerPC/ckkr6gcPDw/vj/PyI3sbTzztDQ8PD+8gr13i8+hh75NvDuV4eHh4R3htBJAPKApeg3floQYeHh7e1bz/1/Dw8PDw8PDw8G7QvgFF4WejfIkRkwAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3aQVLDMAwF0Nz/0rBlBtJ+SbbbMs8rpqRBzwvLSLq+/vW68PDw8PDw8PDw3ox3xevn83+89NeTd58/fsMkNjw8PLyTvCdH7U1wdwE9DrH63Tw2PDw8vPO8XijzlJBvZRQbHh4e3pvx8hAfX3yryQMPDw/vc3nJk0kiyVMOHh4e3jvzCv/wt0q9E96hWgseHh5ezOs1wM78/LL+Hh4eHt4NrzzSFFyak+N7kgyeRIiHh4e3mfe4lPDkCB43zCbDBOWhKzw8PLxFvIRRxSdbVi155G/Dw8PD282bFAsKf7KYWvJiMR4eHt55Xq+tlRdb8wLEqvEvPDw8vN28/NpaPaDzi3s+ttXMe3h4eHhLeXmzKvm8d+GevxMPDw/vJG/VcFX1iO+1yqLLOh4eHt5mXj5clV+dk3SSbG41JeDh4eGd5F3x6m3NvCSRX8rx8PDwdvN6w6n58z1wtbiMh4eHd5KXH8TzkYIkPVQHC8p5Dw8PD2/M6x30a9tdefKI3oOHh4e3mVe92vba+fkGTbYADw8P7wwvL90WmvfFgde1iQcPDw9vN29SVE1aU3kxotoMK5Rx8fDw8DbwkvJBr0yQfGuOxMPDwzvJS8oB+SV7VTNsMgSGh4eHt5tXXZNAk1TR+y0eHh7eSV71CM6LsJPyRH7Rx8PDw3sVL0kGeeGgV8DNE0O5v4eHh4e3jdcLPQ9uVekBDw8P77N4vWGsfFQr3xo8PDy8z+L1WlzzYnGzjIuHh4e3jZcf2Qljx2BBFBseHh7eEV6vAba2bZZcuKOrOR4eHt5m3v9beHh4eHh4eHh4b7C+AVEd7TkSwUJqAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -512,7 +512,7 @@ $(document).ready(function () {
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Tensorflow Serving 填坑记&url=http://oyeblog.com/2018/tensorflow_serving/index.html&pic=http://oyeblog.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Tensorflow Serving 填坑记&url=https://oyeblog.com/2018/tensorflow_serving/index.html&pic=https://oyeblog.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -521,7 +521,7 @@ $(document).ready(function () {
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Tensorflow Serving 填坑记&url=http://oyeblog.com/2018/tensorflow_serving/index.html&via=Travon" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Tensorflow Serving 填坑记&url=https://oyeblog.com/2018/tensorflow_serving/index.html&via=Travon" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -533,7 +533,7 @@ $(document).ready(function () {
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://oyeblog.com/2018/tensorflow_serving/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://oyeblog.com/2018/tensorflow_serving/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -658,7 +658,7 @@ sudo apt-get update &amp;&amp; sudo apt-get install tensorflow-model-server
           <div class="article-statement">
             <hr>  
             <strong>本文标题: </strong><a href="/2018/tensorflow_serving/">Tensorflow Serving 填坑记</a><br>
-            <strong>原始链接: </strong><a href="/2018/tensorflow_serving/" title="Tensorflow Serving 填坑记">http://oyeblog.com/2018/tensorflow_serving/</a><br>
+            <strong>原始链接: </strong><a href="/2018/tensorflow_serving/" title="Tensorflow Serving 填坑记">https://oyeblog.com/2018/tensorflow_serving/</a><br>
             <strong>发布时间: </strong>2018年07月23日 - 20时20分<br>
             
             <strong>最后更新: </strong>2019年01月06日 - 22时18分<br>

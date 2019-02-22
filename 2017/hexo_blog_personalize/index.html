@@ -55,7 +55,7 @@
     <meta name="theme-color" content="#616161">
     <meta name="author" content="Travon">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content="Travon, 欧阳恩,Blog,Hexo">
+    <meta name="keywords" content="Travon, 欧阳恩,Hexo,Blog">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -246,12 +246,12 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://oyeblog.com">
+    <meta property="og:url" content="https://oyeblog.com">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Blog 折腾记 | Travon&#39;s Blog">
-    <meta property="og:image" content="http://oyeblog.com/img/favicon.png">
+    <meta property="og:image" content="https://oyeblog.com/img/favicon.png">
     <meta property="og:description" content>
-    <meta property="og:article:tag" content="Blog"> <meta property="og:article:tag" content="Hexo"> 
+    <meta property="og:article:tag" content="Hexo"> <meta property="og:article:tag" content="Blog"> 
 
     
         <meta property="article:published_time" content="Wed Oct 11 2017 23:06:00 GMT+0800">
@@ -261,13 +261,13 @@
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="Blog 折腾记 | Travon&#39;s Blog">
     <meta name="twitter:description" content>
-    <meta name="twitter:image" content="http://oyeblog.com/img/favicon.png">
+    <meta name="twitter:image" content="https://oyeblog.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="http://oyeblog.com">
+    <meta name="twitter:url" content="https://oyeblog.com">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://oyeblog.com/2017/hexo_blog_personalize/index.html">
+        <link rel="canonical" href="https://oyeblog.com/2017/hexo_blog_personalize/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -279,7 +279,7 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://oyeblog.com/2017/hexo_blog_personalize/index.html",
+    "mainEntityOfPage": "https://oyeblog.com/2017/hexo_blog_personalize/index.html",
     "headline": "Blog 折腾记",
     "datePublished": "Wed Oct 11 2017 23:06:00 GMT+0800",
     "dateModified": "Thu Feb 21 2019 21:17:19 GMT+0800",
@@ -300,7 +300,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Blog,HexoTravon, 欧阳恩",
+    "keywords": ",Hexo,BlogTravon, 欧阳恩",
     "description": "",
 }
 </script>
@@ -467,7 +467,7 @@ $(document).ready(function () {
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQW7DMAwEQP//0+0D2iRLUlIMY3wq2iDg+CCx5F4/j34uPDw8PDw8PDy8m/Gu+Pnni4JP/v198vOkNjw8PLwzvA9HbfCZBJzg57Xh4eHhneQlZb366/uLIT/6J7Xh4eHh3Zk3eR3JpYKHh4f3PF4+hkja7vfXBh4eHt6deck//HlbnJRSHexun7Xg4eHhxbx8yXT+56P7PTw8PLyAV440FYMF+TfkY4tC6AoPDw9vA683aKjiJ/Gsaj14eHh4Z3iTg74aqMq/vxo1wMPDwzvJy1f4vea7OiaexBHw8PDwdvMmK6g8Zpo0zavaazw8PLzdvPmYoNdw51dRHrfCw8PDO8mbDCaSQzxqheNhxIdLBQ8PD28zLxmSToJZq0bAzYsBDw8PbxuvWmISqJrDqlcLHh4e3hle3jRX2+5e0XmD/vIF4eHh4W3mVRf2eUGrBhzVxhoPDw/vu7w8dFVufINl2+LQFR4eHt5SXm8dlRSat9e9C6awAMPDw8NbylsVe5qvsibBLzw8PLwzvOoxvXYk0QscFIYReHh4eNt4vcugGszqlV4NEODh4eGd5FVHt9Ujuzc43h66wsPDwxvwkhFAL1xVpfYCB3h4eHhneJOjPx8HV6n5lYOHh4d3ntc7lJPWeVU4tdpY4+Hh4Z3hVUcMvUFDvk4bjTnw8PDwDvJ6B3R+JeTXTC/KgIeHh3d/3qTE9/hRKAEPDw/vlrzkk9URbXL0L4gO4OHh4S3l9ZZeyQIsf5V5sAAPDw/vu7zqCKD6OiaAaiV4eHh4u3nPe/Dw8PDw8PDw8G7w/AID+s5KT1wS1AAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbklEQVR42u3ay07DMBQE0P7/T8MWCZrO+NVQHa+qEBKfLHyt8X18ffR44OHh4eHh4eHh3Yz3iMcfD/px/ffvZ09InjYzNzw8PLwzvBdL7eWL88lFy3rwIV7MDQ8PD+8gL1nKV92fANp34eHh4d2Zl2+7c8az0oKHh4f3GbyxsCCPNvDw8PD+C6/d2iahbfKu9vrGrAUPDw8v5rWL+8nfR8/38PDw8AJe3dJURg/5IVleDIqmKzw8PLwNvJmItlis45BiQWSMh4eHt5k3dvSV/G+y9I+VjSLGxcPDw9vAG1uy8yIxf6CVf2g8PDy8M7y2BWoshmhj2ZntNR4eHt5J3uAWttyI5wFHOzc8PDy8d/GuGWNFog0+2tKCh4eHd57XYtrjrjzAHWv/wsPDw3svL49i80W/vTOJJOrWATw8PLxFvLZpYH5xb8FtecDDw8PbzZs54srj1/wJW3rK8PDw8JbyZtqt5g+6xuLaqZ4yPDw8vKW8saP9mRg3DyOKrTkeHh7eZt71mI90VzUlLGi6wsPDw1vEGwPMT2gstoiu4OHh4R3hjW2ak/LQlpA8FC7CCDw8PLzNvHaL3B6A5eWk/SseHh7eed7UQ+OGqnyDngS4xZYaDw8PbxGvHXk4m0w3/0xFKIyHh4e3mfeIRx0KlKUiaTWIygweHh7eEd5MMRhb4scKRhQx4+Hh4R3k5W2m+VFZHgHP4PHw8PDuz4sa7uNJ50df0Z14eHh4t+RdTzoPLJKoIm9HwMPDwzvPS5b4NqRIGhHyltmoIOHh4eEd4eURwKrtdR7R1jExHh4e3mbe5w08PDw8PDw8PLwbjG+KTV3J8y38kQAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -508,7 +508,7 @@ $(document).ready(function () {
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blog 折腾记&url=http://oyeblog.com/2017/hexo_blog_personalize/index.html&pic=http://oyeblog.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Blog 折腾记&url=https://oyeblog.com/2017/hexo_blog_personalize/index.html&pic=https://oyeblog.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -517,7 +517,7 @@ $(document).ready(function () {
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Blog 折腾记&url=http://oyeblog.com/2017/hexo_blog_personalize/index.html&via=Travon" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Blog 折腾记&url=https://oyeblog.com/2017/hexo_blog_personalize/index.html&via=Travon" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -529,7 +529,7 @@ $(document).ready(function () {
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://oyeblog.com/2017/hexo_blog_personalize/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://oyeblog.com/2017/hexo_blog_personalize/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -654,7 +654,7 @@ $(document).ready(function () {
           <div class="article-statement">
             <hr>  
             <strong>本文标题: </strong><a href="/2017/hexo_blog_personalize/">Blog 折腾记</a><br>
-            <strong>原始链接: </strong><a href="/2017/hexo_blog_personalize/" title="Blog 折腾记">http://oyeblog.com/2017/hexo_blog_personalize/</a><br>
+            <strong>原始链接: </strong><a href="/2017/hexo_blog_personalize/" title="Blog 折腾记">https://oyeblog.com/2017/hexo_blog_personalize/</a><br>
             <strong>发布时间: </strong>2017年10月11日 - 23时06分<br>
             
             <strong>最后更新: </strong>2019年02月21日 - 21时17分<br>
