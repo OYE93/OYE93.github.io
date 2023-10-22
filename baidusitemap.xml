@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://oyeblog.com/2017/hexo_blog_personalize/</loc>
+    <lastmod>2023-10-22</lastmod>
+  </url>  <url>
     <loc>https://oyeblog.com/2017/hexo_theme/</loc>
     <lastmod>2023-10-22</lastmod>
   </url>  <url>
@@ -16,13 +19,10 @@
     <loc>https://oyeblog.com/2017/google-doodles/</loc>
     <lastmod>2023-10-22</lastmod>
   </url>  <url>
-    <loc>https://oyeblog.com/2017/hexo_blog_personalize/</loc>
+    <loc>https://oyeblog.com/2017/paper_1_RL/</loc>
     <lastmod>2023-10-22</lastmod>
   </url>  <url>
     <loc>https://oyeblog.com/2017/paper_0_LM/</loc>
-    <lastmod>2023-10-22</lastmod>
-  </url>  <url>
-    <loc>https://oyeblog.com/2017/paper_1_RL/</loc>
     <lastmod>2023-10-22</lastmod>
   </url>  <url>
     <loc>https://oyeblog.com/2017/fudan_cuhk/</loc>
