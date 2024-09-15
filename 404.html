@@ -5,6 +5,10 @@
         <title>Error 404</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+        <!-- Favicons -->
+        <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+        <link rel="icon" sizes="192x192" href="/img/favicon.png">
+        <link rel="apple-touch-icon" href="/img/favicon.png">
         <style>
             html, body{
             height: 100%;
@@ -68,8 +72,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.10.6/typeit.min.js"></script>
         <script>
             new TypeIt('#write', {
-            strings: ["<b>404.</b> That’s an error.", "", "The requested URL was not found on this server.", "", "Click the little boy to go back to the home page."],
-            speed: 100,
+            strings: ["<em>404 Not Found.</em> That’s an error.", "", "Click the little boy to go back to the home page."],
+            speed: 40,
             autoStart: false,
             afterComplete: function (instance) {
                 instance.destroy();
